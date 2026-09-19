@@ -33,3 +33,8 @@ Swiss industrial typography: white background, CSU green, geometric headings, re
 This pass changes presentation, not biographical claims or project narratives. Existing placeholder project copy and contact destinations require a separate content pass. Keep generated writing specific, factual, and free of em dashes.
 
 `styles.css` is the canonical implementation. Keep this document aligned when the design changes.
+
+## Aerospace motion
+Decorative SVG orbital paths sit behind all pages at low opacity. Two markers travel slowly around the paths; mobile displays one. A small trajectory below the homepage actions has a moving vehicle marker. Buttons and navigation use brief directional hover/focus cues. These visuals are decorative, not flight-data visualizations.
+
+Motion uses CSS animations with no third-party libraries or continuous JavaScript rendering. The footer pause button persists the choice across pages when storage is available. System reduced-motion always takes precedence; background-tab animations pause. SVGs are hidden from assistive technology and cannot intercept clicks. All content remains available without JavaScript.
