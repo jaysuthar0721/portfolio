@@ -37,34 +37,32 @@
     <!-- ==========================================
          PROJECT 01: VARIABLE GEOMETRY DRONE (REAL)
          ========================================== -->
-    <article class="project" data-reveal>
-      <p class="project-meta">Project&nbsp;01 / MECH&nbsp;307 / Spring&nbsp;2026 / Role: Electronics Architecture &amp; Flight Controls</p>
-      <h2 class="project-title">Variable Geometry Drone</h2>
-
-      <div class="image-placeholder image-placeholder--hero">
-        [ Fig 01_A: Assembled drone on constrained attitude test rig ]
-      </div>
-
-      <div class="project-block">
-        <span class="project-block-label">Background</span>
-        <p>
-          Our MECH&nbsp;307 team set out to build a quadcopter with secondary arms that rotate through a gear-and-servo mechanism. Within one semester, we needed to integrate the mechanism, electronics, and a custom flight controller, then demonstrate attitude control on a constrained test stand. We had no off-the-shelf flight computer or vendor documentation for the chosen electronic speed controllers (<span translate="no">ESCs</span>).
-        </p>
-      </div>
-
-      <div class="project-block">
-        <span class="project-block-label">My work</span>
-        <p>
-          I was responsible for the electronics architecture and attitude control. I used two <span translate="no">ESP32</span> boards with <span translate="no">ESP-NOW</span> for wireless commands and an <span translate="no">MPU-6050</span> motion sensor for feedback. A complementary filter and a 44&nbsp;Hz digital low-pass filter helped reduce the effect of motor vibration on the measurements.<br><br>When the <span translate="no">ESCs</span> did not respond to standard servo <span translate="no">PWM</span>, I switched the motor commands to <span translate="no">DSHOT</span>. I also traced damage on an earlier hardware revision to an undocumented <span translate="no">Vbat</span> connection in the controller pinout. That changed how we checked connections before powering the system.<br><br>I tuned the controller on a two-axis test stand. At the gains we tested, the integral term made the response too aggressive, so I removed it and continued with proportional and derivative control.
-        </p>
-      </div>
-
-      <div class="project-block">
-        <span class="project-block-label">Results</span>
-        <p>
-          The drone demonstrated approximately one second of self-stabilized attitude control on the constrained test stand. During that interval, the controller used motion-sensor feedback to generate corrective motor commands. This was a brief test-stand result, not sustained free flight.<br><br>Wireless commands and sensor feedback worked reliably during testing. I documented the connector issues, wiring lessons, and time needed for firmware revisions so future MECH&nbsp;307 teams could build on the work.
-        </p>
-      </div>
+    <article class="project" id="variable-geometry-drone" aria-labelledby="drone-title">
+      <p class="project-meta">Project&nbsp;01 / MECH&nbsp;307 / Spring&nbsp;2026</p>
+      <h2 class="project-title" id="drone-title">Variable Geometry Drone</h2>
+      <p class="drone-lede">A reconfigurable quadcopter built around a custom ESP32 flight controller, with wireless commands and attitude-control testing on a two-axis stand.</p>
+      <p class="drone-credit"><strong>My focus:</strong> Electronics architecture and flight controls.<br><strong>Team:</strong> Owen Geiss, Jay Suthar, and Tabitha Kwiatkowski.</p>
+<figure class="drone-figure">
+        <a href="images/drone/configurations.webp" target="_blank" rel="noopener" aria-label="Open full-size image: Top views of the drone with its arms extended and folded"><img src="images/drone/configurations.webp" alt="Top views of the drone with its arms extended and folded" width="916" height="461" loading="lazy" decoding="async"></a>
+        <figcaption>Two arm configurations from the mechanical design. The mechanism moved by hand in static tests; powered reconfiguration was not achieved in the final demonstration. Report, Fig. 04, p. 7.</figcaption>
+      </figure><dl class="drone-facts">
+        <div><dt>Flight computer</dt><dd>ESP32 + MPU-6050</dd></div>
+        <div><dt>Motor interface</dt><dd>DSHOT300</dd></div>
+        <div><dt>Firmware loop target</dt><dd>250 Hz</dd></div>
+        <div><dt>Test-stand stabilization</dt><dd>Approximately 1 second</dd></div>
+      </dl><div class="project-block"><h3 class="project-block-label">Background</h3><div class="drone-copy"><p>Our team set out to build a drone whose secondary arms could change orientation through servo-driven spur gears. The challenge was to integrate that mechanism with power distribution, wireless input, sensing, and a flight controller within one semester.</p><p>The mechanical design used mirrored gear trains and connecting rods to move the arms while maintaining propeller clearance. My focus was the electronics and control system: receiving commands, estimating attitude, and turning that feedback into motor corrections.</p></div></div><div class="project-block"><h3 class="project-block-label">Electronics &amp; communication</h3><div class="drone-copy"><p>The drone used a 14.8&nbsp;V, 1300&nbsp;mAh 4S battery, regulated 5&nbsp;V and 3.3&nbsp;V supplies, and a four-in-one ESC. A second ESP32 connected to a PS2 controller sent commands over ESP-NOW, while stabilization ran locally on the drone.</p><p>I integrated the MPU-6050 over I2C and worked through the motor interface. Standard servo-control code did not work for the brushless motor setup, so I switched to DSHOT. The report’s final firmware uses DSHOT300 and includes a 500&nbsp;ms communication-timeout disarm condition. That timeout is a firmware setting, not a measured safety-validation result.</p></div></div><figure class="drone-figure">
+        <a href="images/drone/controller.webp" target="_blank" rel="noopener" aria-label="Open full-size image: PS2 gamepad beside its wired ESP32 interface board on a workbench"><img src="images/drone/controller.webp" alt="PS2 gamepad beside its wired ESP32 interface board on a workbench" width="720" height="408" loading="lazy" decoding="async"></a>
+        <figcaption>The operator interface: PS2 controller, ESP32 board, packet-status LEDs, and a startup buzzer. Report, Fig. 09, p. 13.</figcaption>
+      </figure><div class="project-block"><h3 class="project-block-label">Attitude control</h3><div class="drone-copy"><p>I used a complementary filter to combine accelerometer and gyroscope measurements for roll and pitch, with the MPU-6050’s 44&nbsp;Hz low-pass filter to reduce motor vibration in the feedback. The firmware targets a 250&nbsp;Hz control loop; the report does not establish a measured loop rate.</p><p>I tuned the controller on the test stand. The integral term made the response too aggressive at our tuning stage, so I set its gain to zero and continued with proportional and derivative control. The motor mixer combined the attitude corrections with throttle to command the four motors.</p><p>The team also used Simulink to examine controller response, including a change in moment of inertia associated with folding the arms. Those plots show simulation behavior, not measured flight performance.</p></div></div><div class="drone-gallery"><figure class="drone-figure">
+        <a href="images/drone/simulation-model.webp" target="_blank" rel="noopener" aria-label="Open full-size image: Simulink block diagram of the drone attitude-control model"><img src="images/drone/simulation-model.webp" alt="Simulink block diagram of the drone attitude-control model" width="1170" height="493" loading="lazy" decoding="async"></a>
+        <figcaption>Attitude-control simulation with preset inputs. Report, Fig. 12, p. 16.</figcaption>
+      </figure><figure class="drone-figure">
+        <a href="images/drone/simulation-response.webp" target="_blank" rel="noopener" aria-label="Open full-size image: Simulink scope showing three simulated response traces"><img src="images/drone/simulation-response.webp" alt="Simulink scope showing three simulated response traces" width="940" height="566" loading="lazy" decoding="async"></a>
+        <figcaption>Simulated response; the report identifies the green trace with a change in moment of inertia. Report, Fig. 13, p. 16.</figcaption>
+      </figure></div><div class="project-block"><h3 class="project-block-label">Test setup</h3><div class="drone-copy"><p>The team developed three test-stand iterations. The first allowed motion about one axis; the second added roll and pitch rotation. Integration exposed a propeller-clearance problem, which prompted a third version for the final demonstration. Yaw was outside the test scope.</p></div></div><figure class="drone-figure">
+        <a href="images/drone/test-stand.webp" target="_blank" rel="noopener" aria-label="Open full-size image: Two-axis test stand with a rectangular frame and central drone mount"><img src="images/drone/test-stand.webp" alt="Two-axis test stand with a rectangular frame and central drone mount" width="1170" height="663" loading="lazy" decoding="async"></a>
+        <figcaption>The later test-stand design pictured in the report. The surrounding text describes a V3 revision, although the figure caption labels it V2. Report, Fig. 07, p. 10.</figcaption>
+      </figure><div class="project-block"><h3 class="project-block-label">Results</h3><div class="drone-copy"><p><strong>The drone self-stabilized for approximately one second on the constrained stand before its response diverged.</strong> The controller generated corrective motor commands from sensor feedback, but sustained hover was not achieved.</p><p>The 9&nbsp;g servos could not overcome the loads on the extended arms under gravity and motor vibration. We fixed the arms with adhesive for the final evaluation. The linkage worked when moved by hand, but the project did not demonstrate powered geometry changes during flight.</p><p>The report records reliable wireless commands, working arm/disarm and emergency-stop inputs, and consistent sensor feedback during testing. That gave us an integrated electronics platform, with actuator sizing and controller tuning still unresolved.</p></div></div><div class="project-block"><h3 class="project-block-label">What I learned</h3><div class="drone-copy"><p>An unsecured battery-voltage wire contacted the 3.3&nbsp;V rail and damaged the ESP32 and IMU. That failure made connector identification, insulation, and wire restraint part of the engineering work rather than a final assembly task.</p><p>I would begin motor and sensor integration earlier and budget more time for the edit-upload-test cycle. The next mechanical iteration would need actuator torque calculations and load testing, along with tighter control of printed gear tolerances, before another attempt at powered reconfiguration.</p></div></div><p class="drone-source">Source: <cite>Variable Geometry Drone, Final Design Report</cite>, Owen Geiss, Jay Suthar, and Tabitha Kwiatkowski, May 8, 2026. Figures reproduced from the team report; technical details checked against pp. 10–22 and Appendix D. Select any figure to view it at full size.</p>
     </article>
 
 
