@@ -357,12 +357,12 @@ main, .footer { position: relative; z-index: 1; }
 .leadership-page { max-width: var(--content-width); }
 .leadership-hero {
   display: grid;
-  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
-  gap: clamp(2.5rem, 6vw, 6rem);
-  align-items: end;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.25fr);
+  gap: clamp(2rem, 4.5vw, 4.5rem);
+  align-items: center;
   padding-bottom: 3.5rem;
 }
-.leadership-hero-copy { padding-bottom: .5rem; }
+.leadership-hero-copy { padding-bottom: 0; }
 .leadership-role {
   margin-top: 1.35rem;
   color: var(--accent-green);
@@ -373,7 +373,7 @@ main, .footer { position: relative; z-index: 1; }
   text-transform: uppercase;
 }
 .leadership-lede {
-  max-width: 42rem;
+  max-width: 38rem;
   margin-top: 1.5rem;
   color: #454d46;
   font-size: 1.08rem;
@@ -383,12 +383,14 @@ main, .footer { position: relative; z-index: 1; }
 .leadership-figure { min-width: 0; }
 .leadership-hero-figure {
   background: var(--accent-green);
-  padding: .8rem;
+  padding: .65rem;
 }
 .leadership-hero-figure img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: auto;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
+  object-position: center;
 }
 .leadership-hero-figure figcaption {
   padding: .8rem .2rem .1rem;
