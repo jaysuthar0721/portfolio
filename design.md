@@ -38,3 +38,9 @@ This pass changes presentation, not biographical claims or project narratives. E
 Decorative SVG orbital paths sit behind all pages at low opacity. Two markers travel slowly around the paths; mobile displays one. A small trajectory below the homepage actions has a moving vehicle marker. Buttons and navigation use brief directional hover/focus cues. These visuals are decorative, not flight-data visualizations.
 
 Motion uses CSS animations with no third-party libraries or continuous JavaScript rendering. The footer pause button persists the choice across pages when storage is available. System reduced-motion always takes precedence; background-tab animations pause. SVGs are hidden from assistive technology and cannot intercept clicks. All content remains available without JavaScript.
+
+
+## Leadership case study
+The site includes a dedicated Ram Rocketry leadership page. It uses the same editorial system as the rest of the portfolio, but treats leadership as an engineering case study rather than a résumé list. The page separates organization building from IREC program leadership, distinguishes the formal Project Coordinator title from the broader Chief Engineer role, and uses current subscale metrics to show the technical scope being coordinated.
+
+Ram Rocketry imagery comes from the team's Drive photo library. Use a small number of contextual images with descriptive captions rather than a large gallery. Leadership lessons are written as process changes with concrete operating rules, including earlier task assignment, explicit decision ownership, shared success metrics, and documentation/test planning.
