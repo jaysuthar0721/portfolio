@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ffffff">
+  <title>Manufacturing | Jay Suthar</title>
+  <meta name="description" content="Jay Suthar's manufacturing portfolio: manual milling, process planning, metrology, CNC training, and machining documentation from MECH 200A.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Jay Suthar</a>
+      <div class="nav-links">
+        <a href="about.html">01 / About</a>
+        <a href="projects.html" class="active" aria-current="page">02 / Projects</a>
+        <a href="leadership.html">03 / Leadership</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="manufacturing-page">
+    <div class="title-block" data-reveal>
+      <h1 class="page-title">Manufacturing</h1>
+      <p class="page-subtitle">[ MECH 200A / Fall 2024 / Process → Part ]</p>
+      <hr class="accent-bar">
+    </div>
+
+    <nav class="project-tabs" aria-label="Project categories" data-reveal>
+      <a href="projects.html" class="project-tab">Project case studies</a>
+      <a href="manufacturing.html" class="project-tab active" aria-current="page">Manufacturing</a>
+    </nav>
+
+    <header class="mfg-hero" data-reveal>
+      <div class="mfg-hero-copy">
+        <p class="eyebrow">Manufacturing coursework / shop practice / process planning</p>
+        <h2 class="mfg-hero-title">Design intent only matters if the part can actually be made and checked.</h2>
+        <p class="mfg-lede">
+          I built my original manufacturing portfolio for MECH 200A at Colorado State. The course connected machining theory to the decisions that make a process usable on the shop floor: workholding, tooling, speeds and feeds, safety, inspection, and documentation.
+        </p>
+        <p class="mfg-lede">
+          This page brings that work into my current engineering portfolio. I kept the original class site available as a separate reference rather than replacing it.
+        </p>
+        <a class="mfg-external-link" href="https://jaysuthar0721.wixsite.com/jaysportfolio" target="_blank" rel="noopener">
+          View original Wix manufacturing portfolio <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <figure class="mfg-hero-figure">
+        <img src="images/manufacturing/machined-plate-detail.jpg" alt="Close-up of a machined aluminum plate with triangular pockets and mounting holes" width="1600" height="1200" loading="eager" fetchpriority="high">
+        <figcaption>Machining archive / Fall 2024</figcaption>
+      </figure>
+    </header>
+
+    <section class="mfg-section" data-reveal>
+      <div class="mfg-section-label">
+        <span class="section-number">01 / Milling</span>
+        <p>Process fundamentals</p>
+      </div>
+      <div class="mfg-section-body">
+        <h2 class="section-heading">Manual milling taught me to think about the cutter, the setup, and the operator at the same time.</h2>
+        <div class="mfg-copy">
+          <p>
+            In my MECH 200 process summary, I described milling as a process where the workpiece is fixed while a rotating cutting tool removes material. The same basic relationship scales from manual vertical and horizontal mills to CNC and multi-axis machines, but the setup still controls what geometry is practical.
+          </p>
+          <p>
+            I came away thinking about milling less as a machine and more as a chain of constraints: cutter access, tool reach, workholding, material, spindle speed, feed rate, and how many setups are required to reach the finished geometry.
+          </p>
+        </div>
+
+        <div class="mfg-process-grid">
+          <article>
+            <span>Capability</span>
+            <h3>Geometry &amp; materials</h3>
+            <p>Milling can produce complex features across a broad range of materials and tooling configurations.</p>
+          </article>
+          <article>
+            <span>Constraint</span>
+            <h3>Access &amp; reach</h3>
+            <p>Tool paths, cutter reach, fixtures, and part orientation can limit a design before the first cut is made.</p>
+          </article>
+          <article>
+            <span>Setup</span>
+            <h3>Workholding</h3>
+            <p>The part and vise have to be secure, repeatable, and positioned so the required surfaces remain accessible.</p>
+          </article>
+          <article>
+            <span>Operation</span>
+            <h3>Speed &amp; feed</h3>
+            <p>Spindle speed and feed rate have to match the material and cutter instead of being treated as generic machine settings.</p>
+          </article>
+        </div>
+
+        <div class="mfg-safety">
+          <div>
+            <span class="mfg-mini-label">Shop rules I documented</span>
+            <h3>Safety is part of the process sheet.</h3>
+          </div>
+          <ul>
+            <li>Wear safety glasses and secure loose clothing.</li>
+            <li>Clamp the workpiece securely before cutting.</li>
+            <li>Remove chips with a brush, not by hand.</li>
+            <li>Do not leave the drawbar wrench on the machine.</li>
+            <li>Confirm spindle speed and feed before the operation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="mfg-section" data-reveal>
+      <div class="mfg-section-label">
+        <span class="section-number">02 / Planning</span>
+        <p>Job traveler exercise</p>
+      </div>
+      <div class="mfg-section-body">
+        <h2 class="section-heading">A manufacturing plan has to tell the next person exactly what happens, in what order, and how the result gets verified.</h2>
+        <div class="mfg-copy">
+          <p>
+            For the MECH 200A midterm, I worked through a simulated manufacturing-engineer scenario for a custom gear. The assignment called for a 20-part prototype run in 1215 carbon steel and emphasized manual machining because the volume did not justify the programming, fixturing, and setup overhead of a dedicated CNC production process.
+          </p>
+          <p>
+            The deliverable was a production traveler rather than a design report. My package combined the information a machinist and inspector would need to execute the job and document quality: process instructions, safety, materials and tooling, metrology, and the supporting safety data.
+          </p>
+        </div>
+
+        <dl class="mfg-facts">
+          <div><dt>Scenario</dt><dd>20 prototype gears</dd></div>
+          <div><dt>Material</dt><dd>1215 carbon steel</dd></div>
+          <div><dt>Primary approach</dt><dd>Manual machining</dd></div>
+          <div><dt>Quality</dt><dd>Metrology + go/no-go</dd></div>
+        </dl>
+
+        <div class="mfg-flow" aria-label="Manufacturing planning workflow">
+          <div><span>01</span><strong>BOM</strong><small>Stock / tooling / fluids / hand tools</small></div>
+          <div><span>02</span><strong>Process</strong><small>Operation sequence / setup / instructions</small></div>
+          <div><span>03</span><strong>Parameters</strong><small>Speeds / feeds / cutting conditions</small></div>
+          <div><span>04</span><strong>Inspection</strong><small>Dimensions / tolerances / metrology tools</small></div>
+          <div><span>05</span><strong>Safety</strong><small>Machine hazards / SDS / operator controls</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mfg-section" data-reveal>
+      <div class="mfg-section-label">
+        <span class="section-number">03 / CNC</span>
+        <p>Machine operation</p>
+      </div>
+      <div class="mfg-section-body">
+        <h2 class="section-heading">The course work led into formal Haas CNC mill operator training.</h2>
+        <div class="mfg-copy">
+          <p>
+            I completed the Haas CNC Basic Mill Operator certification in December 2024. The training covered machine-tool fundamentals, mill safety, startup, control operation, and the workflow required before a program is trusted to cut material.
+          </p>
+          <p>
+            That training gave me a better bridge between CAD geometry and the reality of manufacturing it. A model can be dimensionally correct and still be inconvenient to fixture, inspect, or machine efficiently.
+          </p>
+        </div>
+
+        <div class="mfg-credential">
+          <div>
+            <span class="mfg-mini-label">Credential</span>
+            <strong>Haas CNC Basic Mill Operator</strong>
+          </div>
+          <div>
+            <span class="mfg-mini-label">Issued</span>
+            <strong>December 2024</strong>
+          </div>
+          <div>
+            <span class="mfg-mini-label">Focus</span>
+            <strong>Mill safety / startup / operation</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mfg-section" data-reveal>
+      <div class="mfg-section-label">
+        <span class="section-number">04 / Archive</span>
+        <p>Machined parts</p>
+      </div>
+      <div class="mfg-section-body">
+        <h2 class="section-heading">The original portfolio was also a visual record of the parts and manufacturing details I was studying.</h2>
+
+        <div class="mfg-gallery">
+          <figure>
+            <img src="images/manufacturing/machined-plate-detail.jpg" alt="Angled close-up of a machined aluminum plate showing triangular pockets, thin ribs, and mounting holes" width="1600" height="1200" loading="lazy" decoding="async">
+            <figcaption>Close-up: pocket geometry, ribs, edge finish, and drilled mounting features.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/manufacturing/machined-plate-top.jpg" alt="Top view of a machined aluminum plate with repeated triangular pockets and mounting holes" width="1200" height="1600" loading="lazy" decoding="async">
+            <figcaption>Top view: repeated pockets and the relationship between material removal and remaining structure.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="mfg-section mfg-section--last" data-reveal>
+      <div class="mfg-section-label">
+        <span class="section-number">05 / Carry-forward</span>
+        <p>Design for manufacturing</p>
+      </div>
+      <div class="mfg-section-body">
+        <h2 class="section-heading">The useful lesson was not a list of machines. It was learning to design with the manufacturing sequence in mind.</h2>
+        <div class="mfg-copy">
+          <p>
+            I now try to ask manufacturing questions while I am still designing: How will this be held? Which tool reaches that feature? What tolerance is actually needed? How will someone inspect it? What does a failed setup look like, and can the design avoid it?
+          </p>
+          <p>
+            That mindset carries into my later work in rocketry, composites, test hardware, and CAD. The part is not finished when the model is finished. It is finished when the real hardware can be produced, checked, assembled, and used.
+          </p>
+        </div>
+
+        <a class="mfg-external-link mfg-external-link--inline" href="https://jaysuthar0721.wixsite.com/jaysportfolio" target="_blank" rel="noopener">
+          Open the original class portfolio <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Jay Suthar</div>
+      <div class="footer-links">
+        <a href="mailto:your.email@colostate.edu">Email</a>
+        <a href="https://github.com/jaysuthar0721" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/jay-suthar-74205b235/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://drive.google.com/file/d/1qGMX0kKaBQSeNuic2IUalYMxcPYKSg9-/view?usp=drive_link" target="_blank" rel="noopener" class="accent">Resume PDF</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="animations.js" defer></script>
+  <script src="aerospace.js" defer></script>
+
+</body>
+</html>

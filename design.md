@@ -44,3 +44,9 @@ Motion uses CSS animations with no third-party libraries or continuous JavaScrip
 The site includes a dedicated Ram Rocketry leadership page. It uses the same editorial system as the rest of the portfolio, but treats leadership as an engineering case study rather than a résumé list. The page separates organization building from IREC program leadership, distinguishes the formal Project Coordinator title from the broader Chief Engineer role, and uses current subscale metrics to show the technical scope being coordinated.
 
 Ram Rocketry imagery comes from the team's Drive photo library. Use a small number of contextual images with descriptive captions rather than a large gallery. Leadership lessons are written as process changes with concrete operating rules, including earlier task assignment, explicit decision ownership, shared success metrics, and documentation/test planning.
+
+
+## Manufacturing project tab
+Projects now has an internal two-tab navigation: Project case studies and Manufacturing. Manufacturing lives at `manufacturing.html` so it can carry a longer process-focused narrative without crowding the main case-study page.
+
+The manufacturing page follows the existing editorial layout and uses real MECH 200A source material: the Fall 2024 milling process summary, the production-traveler midterm exercise, Haas CNC mill operator training, and class-era machining photos. Keep claims scoped to coursework or simulated manufacturing scenarios when appropriate. The legacy Wix portfolio remains linked as an external reference rather than embedded.
