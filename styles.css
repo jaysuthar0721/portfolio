@@ -149,3 +149,42 @@ main.home { max-width: calc(var(--content-width) + 2 * var(--content-padding)); 
   .drone-gallery .drone-figure a { height: auto; }
   .drone-gallery img { max-height: none; }
 }
+
+/* Aerospace motion: quiet orbital lines behind the page and a hero trajectory. */
+body { isolation: isolate; }
+.aerospace-backdrop { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; color: var(--accent-green); opacity: .12; }
+.aerospace-backdrop svg { width: 100%; height: 100%; }
+.orbit-satellite { transform-origin: 1130px 370px; animation: orbital-pass 70s linear infinite; }
+.orbit-satellite--outer { animation-duration: 110s; animation-direction: reverse; }
+@keyframes orbital-pass { to { transform: rotate(360deg); } }
+.flight-accent { width: min(100%, 360px); height: 54px; margin-top: .25rem; color: var(--accent-green); pointer-events: none; }
+.flight-accent svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.flight-track, .flight-tick { fill: none; stroke: currentColor; stroke-width: 1; opacity: .25; }
+.flight-trail { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-dasharray: 16 370; animation: flight-trace 12s linear infinite; opacity: .6; }
+.flight-vehicle { fill: currentColor; offset-path: path('M4 46 Q115 46 190 27 T352 7'); offset-rotate: auto; animation: flight-pass 12s linear infinite; }
+@keyframes flight-pass { from { offset-distance: 0%; opacity: 0; } 6%, 92% { opacity: 1; } to { offset-distance: 100%; opacity: 0; } }
+@keyframes flight-trace { from { stroke-dashoffset: 16; } to { stroke-dashoffset: -370; } }
+.btn span { transition: transform .2s ease; }
+.btn:hover span, .btn:focus-visible span { transform: translate(3px, -2px); }
+.nav-links a { position: relative; }
+.nav-links a::after { content: ''; position: absolute; left: 0; bottom: 5px; width: 4px; height: 4px; background: currentColor; opacity: 0; transform: translateX(-6px); transition: transform .2s ease, opacity .2s ease; }
+.nav-links a:hover::after, .nav-links a:focus-visible::after { opacity: 1; transform: translateX(0); }
+.motion-toggle { min-height: 44px; padding: .4rem .65rem; background: #fff; color: var(--text-muted); border: 1px solid var(--rule); font: inherit; text-transform: uppercase; cursor: pointer; }
+.motion-toggle:hover { color: var(--accent-green); border-color: var(--accent-green); }
+.motion-toggle:focus-visible { outline: 2px solid var(--accent-green); outline-offset: 4px; }
+.motion-toggle:disabled { cursor: default; }
+.motion-paused *, .motion-hidden * { animation-play-state: paused !important; }
+.motion-paused [data-reveal] { opacity: 1; transform: none; transition: none; }
+.motion-paused .btn span, .motion-paused .nav-links a::after { transform: none; transition: none; }
+@media (max-width: 700px) {
+  .aerospace-backdrop { opacity: .08; }
+  .orbit-satellite--outer { display: none; }
+  .flight-accent { width: min(100%, 280px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbit-satellite, .flight-vehicle, .flight-trail { animation: none; }
+  .flight-vehicle { offset-distance: 60%; }
+  .flight-trail { display: none; }
+  .btn:hover span, .btn:focus-visible span { transform: none; }
+}
+@supports not (offset-path: path('M0 0L1 1')) { .flight-vehicle { display: none; } }
