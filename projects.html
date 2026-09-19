@@ -6,7 +6,7 @@
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#ffffff">
   <title>Projects | Jay Suthar</title>
-  <meta name="description" content="Selected engineering case studies by Jay Suthar covering integrated drone systems, composites, structural FEA, and motor control.">
+  <meta name="description" content="Engineering projects by Jay Suthar, including the electronics, wireless control, and test-stand results of a variable geometry drone.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,23 +46,23 @@
       </div>
 
       <div class="project-block">
-        <span class="project-block-label">Challenge</span>
+        <span class="project-block-label">Background</span>
         <p>
-          Design and demonstrate a quadcopter whose secondary arms rotate in flight through an integrated gear and servo actuation system, and prove closed-loop attitude control on a constrained test stand within a single semester. The team had to integrate a mechanical actuation mechanism, a custom electronics stack, and a flight controller without the benefit of an off-the-shelf flight computer or vendor documentation for the chosen <span translate="no">ESCs</span>.
+          Our MECH&nbsp;307 team set out to build a quadcopter with secondary arms that rotate through a gear-and-servo mechanism. Within one semester, we needed to integrate the mechanism, electronics, and a custom flight controller, then demonstrate attitude control on a constrained test stand. We had no off-the-shelf flight computer or vendor documentation for the chosen electronic speed controllers (<span translate="no">ESCs</span>).
         </p>
       </div>
 
       <div class="project-block">
-        <span class="project-block-label">Action</span>
+        <span class="project-block-label">My work</span>
         <p>
-          I owned the electronics architecture and the <span translate="no">PID</span> controls path. I selected and integrated a dual-<span translate="no">ESP32</span> transmit and receive system using <span translate="no">ESP-NOW</span> for low-latency manual control, paired with an <span translate="no">MPU-6050</span> <span translate="no">IMU</span> running through a complementary filter and a 44&nbsp;Hz digital low-pass to reject motor vibration. When the brushless <span translate="no">ESCs</span> would not respond to standard servo <span translate="no">PWM</span>, I rebuilt the motor command layer around the <span translate="no">DSHOT</span> protocol and isolated an undocumented <span translate="no">Vbat</span> connection on the <span translate="no">ESC</span> pinout that had damaged a previous hardware revision, which became a permanent wire-management rule for the team. I tuned the <span translate="no">PID</span> loops empirically on a 2-axis test stand and dropped the integral term once it proved more aggressive than useful at our gain levels, running stable P and D control instead.
+          I was responsible for the electronics architecture and attitude control. I used two <span translate="no">ESP32</span> boards with <span translate="no">ESP-NOW</span> for wireless commands and an <span translate="no">MPU-6050</span> motion sensor for feedback. A complementary filter and a 44&nbsp;Hz digital low-pass filter helped reduce the effect of motor vibration on the measurements.<br><br>When the <span translate="no">ESCs</span> did not respond to standard servo <span translate="no">PWM</span>, I switched the motor commands to <span translate="no">DSHOT</span>. I also traced damage on an earlier hardware revision to an undocumented <span translate="no">Vbat</span> connection in the controller pinout. That changed how we checked connections before powering the system.<br><br>I tuned the controller on a two-axis test stand. At the gains we tested, the integral term made the response too aggressive, so I removed it and continued with proportional and derivative control.
         </p>
       </div>
 
       <div class="project-block">
-        <span class="project-block-label">Impact</span>
+        <span class="project-block-label">Results</span>
         <p>
-          Demonstrated approximately one second of self-stabilized closed-loop attitude control on the test stand, with the controller correctly generating corrective motor commands from <span translate="no">IMU</span> feedback in real time. Wireless control and <span translate="no">IMU</span> pipeline performed reliably across all flight tests, with manual control inputs received and acted on correctly throughout testing. Produced a written lessons-learned record covering connector specification, wire management, and realistic firmware iteration budgets, which is being handed forward to future MECH&nbsp;307 teams.
+          The drone demonstrated approximately one second of self-stabilized attitude control on the constrained test stand. During that interval, the controller used motion-sensor feedback to generate corrective motor commands. This was a brief test-stand result, not sustained free flight.<br><br>Wireless commands and sensor feedback worked reliably during testing. I documented the connector issues, wiring lessons, and time needed for firmware revisions so future MECH&nbsp;307 teams could build on the work.
         </p>
       </div>
     </article>
@@ -77,7 +77,7 @@
 
       <div class="image-placeholder">[ Hero image: layup, vacuum bag, or finished part ]</div>
 
-      <p class="project-placeholder-note">Challenge / Action / Impact copy not yet written &ndash; placeholder template on the live site.</p>
+      <p class="project-placeholder-note">Project write-up in progress.</p>
     </article>
 
 
@@ -90,7 +90,7 @@
 
       <div class="image-placeholder">[ Hero image: stress contour plot or meshed geometry ]</div>
 
-      <p class="project-placeholder-note">Challenge / Action / Impact copy not yet written &ndash; placeholder template on the live site.</p>
+      <p class="project-placeholder-note">Project write-up in progress.</p>
     </article>
 
 
@@ -103,7 +103,7 @@
 
       <div class="image-placeholder">[ Hero image: hardware test rig or Simulink block diagram ]</div>
 
-      <p class="project-placeholder-note">Challenge / Action / Impact copy not yet written &ndash; placeholder template on the live site.</p>
+      <p class="project-placeholder-note">Project write-up in progress.</p>
     </article>
 
   </main>
