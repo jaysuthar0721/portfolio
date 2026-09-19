@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ffffff">
+  <title>Resume | Jay Suthar</title>
+  <meta name="description" content="Resume for Jay Suthar, mechanical engineering student at Colorado State University with aerospace, research, teaching, and technical leadership experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .resume-page { max-width: 980px; }
+    .resume-header { padding-bottom: 2rem; border-bottom: 1px solid var(--rule); margin-bottom: 3rem; }
+    .resume-contact { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; color: var(--text-muted); font-size: .82rem; line-height: 1.7; }
+    .resume-section { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 2.5rem; padding: 2.5rem 0; border-bottom: 1px solid var(--rule); }
+    .resume-section:last-child { border-bottom: 0; }
+    .resume-section h2 { font: 800 .8rem/1.4 var(--font-display); text-transform: uppercase; letter-spacing: .02em; }
+    .resume-entry { margin-bottom: 2rem; }
+    .resume-entry:last-child { margin-bottom: 0; }
+    .resume-entry-head { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; margin-bottom: .4rem; }
+    .resume-entry h3 { font-size: 1rem; line-height: 1.45; }
+    .resume-date { color: var(--text-muted); font-size: .75rem; white-space: nowrap; }
+    .resume-entry ul { margin: .75rem 0 0 1.15rem; color: #454d46; }
+    .resume-entry li { margin: .45rem 0; line-height: 1.65; }
+    .resume-skills { line-height: 1.8; color: #454d46; }
+    .resume-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+    @media (max-width: 700px) {
+      .resume-section { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+      .resume-entry-head { display: block; }
+      .resume-date { display: block; margin-top: .25rem; white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Jay Suthar</a>
+      <div class="nav-links">
+        <a href="about.html">01 / About</a>
+        <a href="projects.html">02 / Projects</a>
+        <a href="leadership.html">03 / Leadership</a>
+        <a href="resume.html" class="active" aria-current="page">04 / Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="resume-page">
+    <header class="resume-header" data-reveal>
+      <p class="eyebrow">Mechanical engineering / Aerospace concentration</p>
+      <h1 class="page-title">Resume</h1>
+      <div class="resume-contact">
+        <span>Fort Collins, Colorado</span>
+        <a href="tel:+19706895228">+1 (970) 689-5228</a>
+        <a href="mailto:jaysuthar0721@gmail.com">jaysuthar0721@gmail.com</a>
+      </div>
+    </header>
+
+    <section class="resume-section" data-reveal>
+      <h2>Education</h2>
+      <div class="resume-entry">
+        <div class="resume-entry-head">
+          <h3>Colorado State University — B.S. Mechanical Engineering, Aerospace Concentration</h3>
+          <span class="resume-date">Expected May 2027</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="resume-section" data-reveal>
+      <h2>Industry Experience</h2>
+      <div>
+        <article class="resume-entry">
+          <div class="resume-entry-head"><h3>Undergraduate Research Assistant, Walter Scott Jr. College of Engineering</h3><span class="resume-date">Jan 2025 – Aug 2025</span></div>
+          <ul>
+            <li>Supported experimental studies on laser-matter interactions in Dr. Jorge Rocca's lab through the SURE program.</li>
+            <li>Set up and maintained test equipment, coordinated sensor selection, material sourcing, and test workflows.</li>
+            <li>Collected and reduced experimental data and generated MATLAB plots to support engineering decisions.</li>
+            <li>Presented findings to the research team and handled general lab upkeep and inventory tracking.</li>
+          </ul>
+        </article>
+        <article class="resume-entry">
+          <div class="resume-entry-head"><h3>Undergraduate Teaching Assistant, Walter Scott Jr. College of Engineering</h3><span class="resume-date">Aug 2024 – May 2025</span></div>
+          <ul>
+            <li>Taught Excel and MATLAB workflows for MECH 103 and 105, supporting 60+ students.</li>
+            <li>Graded technical assignments, ran weekly office hours, and helped students debug analysis problems.</li>
+          </ul>
+        </article>
+        <article class="resume-entry">
+          <div class="resume-entry-head"><h3>OURA Lab Researcher, Office of Undergraduate Research and Artistry</h3><span class="resume-date">Sep 2024 – Oct 2024</span></div>
+          <ul>
+            <li>Designed and ran a study on 3D-printing filament biodegradability and tensile strength.</li>
+            <li>Operated tensile testing equipment, recorded load and displacement data, and reduced results in MATLAB.</li>
+            <li>Maintained lab equipment between runs, managed sample inventory, and reported findings to a faculty mentor.</li>
+          </ul>
+        </article>
+        <article class="resume-entry">
+          <div class="resume-entry-head"><h3>L’SPACE NPWEE Proposal Writer, NASA</h3><span class="resume-date">May 2024 – Aug 2024</span></div>
+          <ul>
+            <li>Collaborated with a 15+ member team and subject matter experts to develop and propose solutions for NASA systems constraints, investing 200+ hours in research, meetings, and evaluations.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="resume-section" data-reveal>
+      <h2>Projects &amp; Organizations</h2>
+      <div>
+        <article class="resume-entry">
+          <div class="resume-entry-head"><h3>Project Manager, CSU IREC Rocket Team</h3><span class="resume-date">May 2026 – Present</span></div>
+          <ul>
+            <li>Leading project management for CSU’s entry into the International Rocket Engineering Competition.</li>
+            <li>Assembled a senior-design capstone team and brought in industry sponsors to support the engineering cycle.</li>
+            <li>Simulated flight scenarios in Python and Ansys to support airbrakes and composites testing.</li>
+          </ul>
+        </article>
+        <article class="resume-entry">
+          <div class="resume-entry-head"><h3>Payload Bay Lead, Ram Launch Initiative</h3><span class="resume-date">Aug 2024 – May 2025</span></div>
+          <ul>
+            <li>Designed and analyzed the payload bay assembly using SolidWorks and Fusion 360 Electronics while integrating BMP280, PCF8523, Teensy 4.1, and BNO055 hardware.</li>
+            <li>Contributed to the Preliminary Design Review through system analyses and avionics-integration optimization.</li>
+            <li>Secured 7th place overall out of 68 teams in the NASA USLI Competition.</li>
+          </ul>
+        </article>
+        <article class="resume-entry">
+          <div class="resume-entry-head"><h3>President, Ram Rocketry Club</h3><span class="resume-date">Aug 2024 – May 2026</span></div>
+          <ul>
+            <li>Led mechanical design and fabrication of rockets for a 50+ member team, coordinating with machinists.</li>
+            <li>Coordinated with CSU departments to initiate the Ram Rocketry Liquid Engine Program.</li>
+            <li>Raised $10,000+ through corporate funding over the academic year to develop technical aerospace projects.</li>
+            <li>Directed assembly and flight testing, applying engineering change processes (ECOs).</li>
+          </ul>
+        </article>
+        <article class="resume-entry">
+          <div class="resume-entry-head"><h3>Project Intern, SUPROS</h3><span class="resume-date">Jul 2022 – Aug 2022</span></div>
+          <ul>
+            <li>Assisted with prototype satellite development and mechanical fixture evaluations.</li>
+            <li>Researched prior designs and implemented feasible improvements under technical constraints.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="resume-section" data-reveal>
+      <h2>Skills &amp; Certifications</h2>
+      <div class="resume-skills">
+        Excel, MATLAB, Python, SolidWorks, Fusion 360, Siemens NX, Autodesk Inventor, Arduino, basic FEA, Ansys Mechanical, Fluent, ACP Pre; SolidWorks CAD Design Associate (CSWA); HAAS CNC Basic Mill Operator Certificate; NASA L'SPACE NPWEE; College of Engineering Dean's List (Fall 2023, Spring 2024).
+        <div class="resume-actions">
+          <a href="mailto:jaysuthar0721@gmail.com" class="btn btn-primary">Contact me <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Jay Suthar</div>
+      <div class="footer-links">
+        <a href="mailto:jaysuthar0721@gmail.com">Email</a>
+        <a href="https://github.com/jaysuthar0721" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/jay-suthar-74205b235/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="resume.html" class="accent">Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="animations.js" defer></script>
+  <script src="aerospace.js" defer></script>
+</body>
+</html>
