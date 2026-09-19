@@ -18,7 +18,7 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <nav class="nav">
+  <nav class="nav" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="index.html" class="nav-brand">Jay Suthar</a>
       <div class="nav-links">
@@ -30,7 +30,7 @@
 
   <main id="main" class="home">
     <section class="hero-split" data-hero>
-      <div class="hero-split-panel">
+      <figure class="hero-split-panel">
         <img
           class="hero-portrait"
           src="images/jay-portrait.jpg"
@@ -39,10 +39,12 @@
           height="606"
           loading="eager"
           fetchpriority="high">
-      </div>
+        <figcaption class="portrait-caption"><span>Field notes / 01</span><span>Ram Rocketry</span></figcaption>
+      </figure>
 
       <div class="hero-split-content">
         <div>
+          <p class="eyebrow">Mechanical engineering / Aerospace systems</p>
           <h1 class="hero-name">
             <span class="word-wrap"><span class="word">Jay</span></span>
             <span class="word-wrap"><span class="word">Suthar</span></span>
@@ -53,12 +55,13 @@
         <p class="hero-intro">
           I am a mechanical engineering student at Colorado State University who studies aerospace systems, propulsion and experimental engineering. It is my preference to manage problems - applying basic physics laws during the processes of design, simulation, fabrication plus testing. There is a specific focus in my work on fluid dynamics and systems that operate at high speeds or under extreme conditions.
 
-By participating in research, Ram Rocketry but also practical engineering projects, I have gained experience in mechanical design, computational fluid dynamics, propulsion, control systems and experimental testing. The portfolio contains documentation of the projects, systems as well as lessons that influence my engineering methods.
+</p>
+        <p class="hero-intro">By participating in research, Ram Rocketry but also practical engineering projects, I have gained experience in mechanical design, computational fluid dynamics, propulsion, control systems and experimental testing. The portfolio contains documentation of the projects, systems as well as lessons that influence my engineering methods.
         </p>
 
         <div class="hero-ctas">
-          <a href="about.html" class="btn btn-primary">Read About Me &rarr;</a>
-          <a href="projects.html" class="btn btn-secondary">See Projects &rarr;</a>
+          <a href="projects.html" class="btn btn-primary">Explore projects <span aria-hidden="true">&nearr;</span></a>
+          <a href="about.html" class="btn btn-secondary">About me <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
     </section>
