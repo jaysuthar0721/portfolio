@@ -1026,18 +1026,6 @@ main, .footer { position: relative; z-index: 1; }
    PROJECT INDEX / MODAL CASE STUDIES
    ========================================================= */
 .project-index { position: relative; }
-.project-index-intro {
-  display: grid;
-  grid-template-columns: minmax(0, .9fr) minmax(0, 1.5fr);
-  gap: 2rem;
-  align-items: start;
-  margin: 0 0 3.25rem;
-  padding: 1.3rem 0;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-}
-.project-index-intro .eyebrow { margin: 0; }
-.project-index-intro > p:last-child { max-width: 44rem; color: #454d46; line-height: 1.75; }
 
 .project-grid-shell { position: relative; }
 .project-flightpath {
@@ -1223,6 +1211,9 @@ main, .footer { position: relative; z-index: 1; }
 .project-card:focus-visible .project-card-open b { transform: translate(3px, -3px); }
 
 .project-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
   width: min(1000px, calc(100vw - 2rem));
   max-height: 88vh;
   padding: 0;
@@ -1333,7 +1324,6 @@ main, .footer { position: relative; z-index: 1; }
 
 @media (max-width: 800px) {
   .project-grid { grid-template-columns: minmax(0, 1fr); }
-  .project-index-intro { grid-template-columns: minmax(0, 1fr); gap: .8rem; }
   .project-card-body { min-height: 155px; }
   .project-flightpath { inset-inline: -2rem; width: calc(100% + 4rem); }
 }
