@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff">
   <title>Resume | Jay Suthar</title>
   <meta name="description" content="Resume for Jay Suthar, mechanical engineering student at Colorado State University with aerospace, research, teaching, and technical leadership experience.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
+  <script src="theme.js"></script>
   <link rel="stylesheet" href="styles.css">
   <style>
     .resume-page { max-width: 980px; }
@@ -23,9 +24,9 @@
     .resume-entry-head { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; margin-bottom: .4rem; }
     .resume-entry h3 { font-size: 1rem; line-height: 1.45; }
     .resume-date { color: var(--text-muted); font-size: .75rem; white-space: nowrap; }
-    .resume-entry ul { margin: .75rem 0 0 1.15rem; color: #454d46; }
+    .resume-entry ul { margin: .75rem 0 0 1.15rem; color: var(--copy); }
     .resume-entry li { margin: .45rem 0; line-height: 1.65; }
-    .resume-skills { line-height: 1.8; color: #454d46; }
+    .resume-skills { line-height: 1.8; color: var(--copy); }
     .resume-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
     @media (max-width: 700px) {
       .resume-section { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
