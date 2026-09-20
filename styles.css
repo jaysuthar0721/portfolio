@@ -1021,3 +1021,338 @@ main, .footer { position: relative; z-index: 1; }
   .mfg-gallery figure:last-child img { aspect-ratio: auto; }
   .mfg-external-link { width: 100%; }
 }
+
+/* =========================================================
+   PROJECT INDEX / MODAL CASE STUDIES
+   ========================================================= */
+.project-index { position: relative; }
+.project-index-intro {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.5fr);
+  gap: 2rem;
+  align-items: start;
+  margin: 0 0 3.25rem;
+  padding: 1.3rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.project-index-intro .eyebrow { margin: 0; }
+.project-index-intro > p:last-child { max-width: 44rem; color: #454d46; line-height: 1.75; }
+
+.project-grid-shell { position: relative; }
+.project-flightpath {
+  position: absolute;
+  inset: -7rem -8rem auto -8rem;
+  width: calc(100% + 16rem);
+  height: calc(100% + 10rem);
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+.project-flightpath path {
+  fill: none;
+  stroke: var(--accent-green);
+  stroke-width: 1.25;
+  stroke-dasharray: 1.5 4.5;
+  opacity: .16;
+  animation: projectTrajectory 18s linear infinite;
+}
+
+.project-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2.2vw, 1.6rem);
+}
+
+.project-card {
+  --card-x: 0px;
+  --card-y: 0px;
+  appearance: none;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  color: var(--text);
+  border: 1px solid var(--rule);
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  box-shadow: 0 0 0 rgba(25, 39, 29, 0);
+  transform: translate(var(--card-x), var(--card-y));
+  transition: transform .24s ease, border-color .2s ease, box-shadow .24s ease;
+}
+.project-card::before,
+.project-card::after {
+  content: '';
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+  background: var(--accent-orange);
+  opacity: 0;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.project-card::before { top: 12px; left: 12px; width: 26px; height: 1px; transform: translateX(-8px); }
+.project-card::after { top: 12px; left: 12px; width: 1px; height: 26px; transform: translateY(-8px); }
+.project-card:hover,
+.project-card:focus-visible {
+  border-color: var(--accent-green);
+  box-shadow: 0 20px 45px rgba(30, 44, 34, .11);
+  outline: none;
+}
+.project-card:hover::before,
+.project-card:hover::after,
+.project-card:focus-visible::before,
+.project-card:focus-visible::after { opacity: 1; transform: none; }
+
+.project-card-index {
+  position: absolute;
+  top: .85rem;
+  right: .9rem;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 .4rem;
+  background: rgba(255,255,255,.92);
+  border: 1px solid var(--rule);
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+
+.project-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #eef1ee;
+  border-bottom: 1px solid var(--rule);
+  color: var(--accent-green);
+}
+.project-thumb img,
+.project-thumb svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.project-card:hover .project-thumb img,
+.project-card:hover .project-thumb svg,
+.project-card:focus-visible .project-thumb img,
+.project-card:focus-visible .project-thumb svg { transform: scale(1.025); }
+
+.project-thumb--schematic { background: #f5f7f5; }
+.project-thumb--schematic svg { padding: 2rem; }
+.schematic-grid { fill: none; stroke: #cfd7d1; stroke-width: 1; opacity: .62; }
+.schematic-main { fill: none; stroke: currentColor; stroke-width: 2; }
+.schematic-point { fill: var(--accent-orange); }
+.schematic-load { fill: none; stroke: var(--accent-orange); stroke-width: 2; }
+.schematic-labels { fill: var(--text); font: 700 17px/1 var(--font-mono, monospace); letter-spacing: .06em; }
+
+.project-thumb-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 1px;
+  background: var(--accent-orange);
+  opacity: 0;
+  box-shadow: 0 0 12px rgba(234, 88, 12, .22);
+}
+.project-card:hover .project-thumb-scan,
+.project-card:focus-visible .project-thumb-scan {
+  opacity: .75;
+  animation: telemetrySweep 2.6s linear infinite;
+}
+
+.project-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 180px;
+  padding: 1.15rem 1.2rem 1.25rem;
+}
+.project-card-kicker {
+  color: var(--accent-green);
+  font-size: .64rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.project-card-title {
+  max-width: 26rem;
+  margin-top: .55rem;
+  font: 800 clamp(1.15rem, 2.1vw, 1.55rem)/1.25 var(--font-display);
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+}
+.project-card-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  margin-top: auto;
+  padding-top: 1.6rem;
+  color: var(--text-muted);
+  font-size: .68rem;
+  line-height: 1.45;
+}
+.project-card-open {
+  flex: 0 0 auto;
+  color: var(--text);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.project-card-open b {
+  display: inline-block;
+  margin-left: .25rem;
+  font-size: .95rem;
+  transition: transform .2s ease;
+}
+.project-card:hover .project-card-open b,
+.project-card:focus-visible .project-card-open b { transform: translate(3px, -3px); }
+
+.project-dialog {
+  width: min(1000px, calc(100vw - 2rem));
+  max-height: 88vh;
+  padding: 0;
+  overflow: hidden;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--text);
+  box-shadow: 0 32px 80px rgba(18, 27, 21, .2);
+}
+.project-dialog[open] { animation: projectDialogIn .24s cubic-bezier(.2,.75,.2,1); }
+.project-dialog::backdrop {
+  background: rgba(235, 239, 235, .62);
+  backdrop-filter: blur(13px) saturate(.9);
+  animation: projectBackdropIn .2s ease-out;
+}
+.project-dialog-frame { position: relative; background: #fff; }
+.project-dialog-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  min-height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: .65rem .8rem .65rem 1rem;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid var(--rule);
+}
+.project-dialog-status {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  color: var(--text-muted);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.project-dialog-status i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  animation: telemetryPulse 1.8s ease-in-out infinite;
+}
+.project-dialog-close {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  min-height: 38px;
+  padding: .4rem .65rem;
+  border: 1px solid var(--rule);
+  background: #fff;
+  color: var(--text);
+  font: 700 .66rem/1 var(--font-body);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.project-dialog-close span { font-size: 1.25rem; line-height: .8; }
+.project-dialog-close:hover,
+.project-dialog-close:focus-visible { border-color: var(--accent-orange); color: var(--accent-orange); outline: none; }
+
+.project-dialog-scroll {
+  max-height: calc(88vh - 56px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.project-detail {
+  padding: clamp(1.35rem, 3.5vw, 3rem);
+}
+.project-detail-header {
+  display: grid;
+  gap: .8rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.7rem;
+  border-bottom: 1px solid var(--rule);
+}
+.project-detail-header .project-title { margin: 0; }
+.project-detail-header .project-meta { margin: 0; }
+.project-detail-lede {
+  max-width: 49rem;
+  color: #454d46;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.project-detail-hero { margin-top: 0; }
+.project-detail-schematic {
+  margin: 0 0 2rem;
+  border: 1px solid var(--rule);
+  background: #f5f7f5;
+  color: var(--accent-green);
+  overflow: hidden;
+}
+.project-detail-schematic svg { display: block; width: 100%; height: auto; }
+.detail-grid { fill: none; stroke: #ced6d0; stroke-width: 1; opacity: .6; }
+.detail-primary { fill: none; stroke: currentColor; stroke-width: 2; }
+.detail-secondary { fill: none; stroke: var(--accent-orange); stroke-width: 1.5; opacity: .82; }
+.project-modal-open { overflow: hidden; }
+
+@keyframes projectTrajectory { to { stroke-dashoffset: -100; } }
+@keyframes telemetrySweep { from { transform: translateY(0); } to { transform: translateY(400px); } }
+@keyframes telemetryPulse { 0%, 100% { opacity: .35; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.15); } }
+@keyframes projectDialogIn { from { opacity: 0; transform: translateY(16px) scale(.985); } to { opacity: 1; transform: none; } }
+@keyframes projectBackdropIn { from { opacity: 0; } to { opacity: 1; } }
+
+@media (max-width: 800px) {
+  .project-grid { grid-template-columns: minmax(0, 1fr); }
+  .project-index-intro { grid-template-columns: minmax(0, 1fr); gap: .8rem; }
+  .project-card-body { min-height: 155px; }
+  .project-flightpath { inset-inline: -2rem; width: calc(100% + 4rem); }
+}
+@media (max-width: 520px) {
+  .project-card-footer { align-items: start; flex-direction: column; }
+  .project-thumb--schematic svg { padding: 1rem; }
+  .project-dialog { width: calc(100vw - 1rem); max-height: 92vh; }
+  .project-dialog-scroll { max-height: calc(92vh - 56px); }
+  .project-dialog-status { font-size: .55rem; }
+  .project-detail { padding: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-flightpath path,
+  .project-thumb-scan,
+  .project-dialog-status i,
+  .project-dialog[open],
+  .project-dialog::backdrop { animation: none !important; }
+  .project-card,
+  .project-thumb img,
+  .project-thumb svg,
+  .project-card-open b { transition: none !important; transform: none !important; }
+}
