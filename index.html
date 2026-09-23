@@ -67,7 +67,80 @@
           <a href="about.html" class="btn btn-secondary">About me <span aria-hidden="true">&rarr;</span></a>
           <a href="resume.html" class="btn btn-secondary">View resume <span aria-hidden="true">&rarr;</span></a>
         </div>
+
+        <a class="hero-scroll-cue" href="#home-directory" aria-label="Scroll to explore the portfolio">
+          <span class="hero-scroll-orbit" aria-hidden="true"><i></i></span>
+          <span>Scroll to explore</span>
+        </a>
       </div>
+    </section>
+
+    <section class="home-directory" id="home-directory" aria-labelledby="directory-title" data-reveal>
+      <div class="home-section-heading">
+        <p class="eyebrow">Portfolio flight plan</p>
+        <h2 id="directory-title">Explore the work.</h2>
+      </div>
+
+      <div class="directory-grid">
+        <a class="directory-card directory-card--blue" href="projects.html">
+          <span class="directory-index">01</span>
+          <span class="directory-copy">
+            <strong>Projects</strong>
+            <small>Design, controls, simulation, manufacturing, and test work.</small>
+          </span>
+          <span class="directory-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="directory-card directory-card--coral" href="leadership.html">
+          <span class="directory-index">02</span>
+          <span class="directory-copy">
+            <strong>Leadership</strong>
+            <small>Ram Rocketry, IREC systems work, team structure, and program execution.</small>
+          </span>
+          <span class="directory-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="directory-card directory-card--cyan" href="about.html">
+          <span class="directory-index">03</span>
+          <span class="directory-copy">
+            <strong>Research &amp; Background</strong>
+            <small>IFE nanowire research, engineering experience, tools, and how I work.</small>
+          </span>
+          <span class="directory-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="directory-card directory-card--violet" href="resume.html">
+          <span class="directory-index">04</span>
+          <span class="directory-copy">
+            <strong>Résumé</strong>
+            <small>A compact record of engineering experience, projects, and technical skills.</small>
+          </span>
+          <span class="directory-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="featured-work" aria-labelledby="featured-work-title" data-reveal>
+      <div class="featured-work-copy">
+        <p class="eyebrow">Featured work / Flight controls</p>
+        <h2 id="featured-work-title">Variable Geometry Drone</h2>
+        <p>
+          A reconfigurable quadcopter built around a custom ESP32 flight controller. My work centered on the electronics architecture, wireless commands, attitude estimation, motor control, and test-stand tuning.
+        </p>
+
+        <dl class="featured-facts">
+          <div><dt>Flight computer</dt><dd>ESP32 + MPU-6050</dd></div>
+          <div><dt>Motor interface</dt><dd>DSHOT300</dd></div>
+          <div><dt>Loop target</dt><dd>250 Hz</dd></div>
+        </dl>
+
+        <a href="projects.html#variable-geometry-drone" class="btn btn-primary">Open case study <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <a class="featured-work-image" href="projects.html#variable-geometry-drone" aria-label="Open Variable Geometry Drone case study">
+        <img src="images/drone/configurations.webp" alt="Variable geometry drone shown in extended and folded arm configurations" width="916" height="461" loading="lazy" decoding="async">
+        <span class="featured-image-caption"><span>MECH 307 / Spring 2026</span><span>Controls + Embedded Systems</span></span>
+      </a>
     </section>
   </main>
 
