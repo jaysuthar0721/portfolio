@@ -1345,6 +1345,7 @@ main, .footer { position: relative; z-index: 1; }
   .project-flightpath { inset-inline: -2rem; width: calc(100% + 4rem); }
 }
 @media (max-width: 520px) {
+  .project-flightpath { inset-inline: -20px; width: calc(100% + 40px); }
   .project-card-footer { align-items: start; flex-direction: column; }
   .project-thumb--schematic svg { padding: 1rem; }
   .project-dialog { width: calc(100vw - 1rem); max-height: 92vh; }
@@ -2201,3 +2202,15 @@ body,
 @media (prefers-reduced-motion: reduce) {
   .hero-scroll-orbit i { animation: none; }
 }
+
+/* Keep each project's established accent independent of grid position. */
+.project-card[data-project="active-fin-stabilization-rocket"],
+.project-card[data-project="composite-wing-skin"] { --card-accent: var(--accent-coral); }
+.project-card[data-project="ansys-structural"] { --card-accent: var(--accent-cyan); }
+.project-card[data-project="pid-simulink"],
+.project-card[data-project="injection-molded-screwdriver"] { --card-accent: var(--accent-violet); }
+.project-card[data-project="manufacturing-clock"] { --card-accent: var(--accent-gold); }
+.project-card[data-project="manufacturing-screwdriver"] { --card-accent: var(--accent-coral); }
+.project-card[data-project="manufacturing-coaster"] { --card-accent: var(--accent-blue); }
+.project-detail[data-project-slug="active-fin-stabilization-rocket"] { --detail-accent: var(--accent-coral); }
+.project-card-description { margin-top: .75rem; color: var(--copy); font-size: .85rem; line-height: 1.65; }
