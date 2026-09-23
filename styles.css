@@ -2216,3 +2216,6 @@ body,
 .project-card-description { margin-top: .75rem; color: var(--copy); font-size: .85rem; line-height: 1.65; }
 .project-card[data-project="active-fin-stabilization-rocket"] .project-thumb img { object-fit: contain; }
 .project-detail[data-project-slug="active-fin-stabilization-rocket"] .project-detail-hero img { max-height: 680px; }
+.project-card[data-project="nasa-usli-2024-2025"] { --card-accent: var(--accent-cyan); }
+.project-detail[data-project-slug="nasa-usli-2024-2025"] { --detail-accent: var(--accent-cyan); }
+.project-card[data-project="nasa-usli-2024-2025"] .project-thumb img { object-fit: contain; }

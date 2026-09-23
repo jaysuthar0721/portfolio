@@ -67,8 +67,21 @@
           </span>
         </button>
 
-        <button class="project-card" type="button" data-project="composite-wing-skin" aria-haspopup="dialog" data-reveal>
+        <button class="project-card project-card--image" type="button" data-project="nasa-usli-2024-2025" aria-haspopup="dialog" data-reveal>
           <span class="project-card-index">03</span>
+          <span class="project-thumb">
+            <img src="images/nasa-usli/team.jpg" alt="NASA USLI team holding their green and white rocket at the launch field" width="4186" height="2791" loading="lazy" decoding="async">
+            <span class="project-thumb-scan" aria-hidden="true"></span>
+          </span>
+          <span class="project-card-body">
+            <span class="project-card-kicker">NASA USLI / Payload Specialist</span>
+            <strong class="project-card-title">NASA USLI 2024–2025</strong>
+            <span class="project-card-footer"><span>2024–2025</span><span class="project-card-open">Open project <b aria-hidden="true">↗</b></span></span>
+          </span>
+        </button>
+
+        <button class="project-card" type="button" data-project="composite-wing-skin" aria-haspopup="dialog" data-reveal>
+          <span class="project-card-index">04</span>
           <span class="project-thumb project-thumb--schematic">
             <svg viewBox="0 0 640 400" role="img" aria-label="Technical schematic representing composite ply layers and a tapered wing panel">
               <g class="schematic-grid">
@@ -93,7 +106,7 @@
         </button>
 
         <button class="project-card" type="button" data-project="ansys-structural" aria-haspopup="dialog" data-reveal>
-          <span class="project-card-index">04</span>
+          <span class="project-card-index">05</span>
           <span class="project-thumb project-thumb--schematic">
             <svg viewBox="0 0 640 400" role="img" aria-label="Technical schematic representing a finite-element mesh and structural load path">
               <g class="schematic-grid">
@@ -120,7 +133,7 @@
         </button>
 
         <button class="project-card" type="button" data-project="pid-simulink" aria-haspopup="dialog" data-reveal>
-          <span class="project-card-index">05</span>
+          <span class="project-card-index">06</span>
           <span class="project-thumb project-thumb--schematic">
             <svg viewBox="0 0 640 400" role="img" aria-label="Technical schematic representing a closed-loop PID control system">
               <g class="schematic-grid">
@@ -151,7 +164,7 @@
         </button>
 
         <button class="project-card project-card--manufacturing project-card--image" type="button" data-project="manufacturing-clock" aria-haspopup="dialog" data-reveal>
-          <span class="project-card-index">06</span>
+          <span class="project-card-index">07</span>
           <span class="project-thumb">
             <img src="images/manufacturing/clock.webp" alt="Finished machined desk clock with acrylic face, aluminum base, brass pen holder, and steel pen holder" width="800" loading="lazy" decoding="async">
             <span class="project-thumb-scan" aria-hidden="true"></span>
@@ -164,7 +177,7 @@
         </button>
 
         <button class="project-card project-card--manufacturing project-card--image" type="button" data-project="manufacturing-screwdriver" aria-haspopup="dialog" data-reveal>
-          <span class="project-card-index">07</span>
+          <span class="project-card-index">08</span>
           <span class="project-thumb">
             <img src="images/manufacturing/screwdriver.webp" alt="Patterned image of the forged and machined screwdriver project" width="800" loading="lazy" decoding="async">
             <span class="project-thumb-scan" aria-hidden="true"></span>
@@ -177,7 +190,7 @@
         </button>
 
         <button class="project-card project-card--manufacturing project-card--image" type="button" data-project="manufacturing-coaster" aria-haspopup="dialog" data-reveal>
-          <span class="project-card-index">08</span>
+          <span class="project-card-index">09</span>
           <span class="project-thumb">
             <img src="images/manufacturing/coaster.webp" alt="Patterned image of the CNC machined coaster project" width="800" loading="lazy" decoding="async">
             <span class="project-thumb-scan" aria-hidden="true"></span>
@@ -190,7 +203,7 @@
         </button>
 
         <button class="project-card project-card--manufacturing project-card--image" type="button" data-project="injection-molded-screwdriver" aria-haspopup="dialog" data-reveal>
-          <span class="project-card-index">09</span>
+          <span class="project-card-index">10</span>
           <span class="project-thumb">
             <img src="images/manufacturing/injection-molded-screwdriver.webp" alt="Morgan Press injection molding machine with the molded white screwdriver visible beside it" width="800" loading="lazy" decoding="async">
             <span class="project-thumb-scan" aria-hidden="true"></span>
@@ -307,10 +320,31 @@
     </article>
   </template>
 
+  <template id="project-nasa-usli-2024-2025">
+    <article class="project-detail" data-project-slug="nasa-usli-2024-2025">
+      <header class="project-detail-header">
+        <p class="project-meta">Project 03 / NASA USLI / 2024–2025</p>
+        <h2 class="project-title" id="project-dialog-title">NASA USLI 2024–2025</h2>
+        <p class="project-detail-lede">I worked as a Payload Specialist for the 2024–2025 NASA USLI season.</p>
+        <p class="drone-credit">Full project write-up coming soon.</p>
+      </header>
+      <figure class="drone-figure project-detail-hero">
+        <a href="images/nasa-usli/team.jpg" target="_blank" rel="noopener"><img src="images/nasa-usli/team.jpg" alt="NASA USLI team holding their green and white rocket at the launch field" width="4186" height="2791" loading="lazy" decoding="async"></a>
+        <figcaption>The 2024–2025 NASA USLI team with the rocket.</figcaption>
+      </figure>
+      <div class="project-block"><h3 class="project-block-label">Payload / Data collection</h3><div class="drone-copy">
+        <figure class="drone-figure">
+          <a href="images/nasa-usli/payload-data-collection.png" target="_blank" rel="noopener"><img src="images/nasa-usli/payload-data-collection.png" alt="Payload assembly diagram with labeled BMP384, BNO055, PCF8523, Teensy 4.1, and rotary switch" width="1144" height="678" loading="lazy" decoding="async"></a>
+          <figcaption>Data collection assembly showing the payload’s labeled electronics.</figcaption>
+        </figure>
+      </div></div>
+    </article>
+  </template>
+
   <template id="project-composite-wing-skin">
     <article class="project-detail" data-project-slug="composite-wing-skin">
       <header class="project-detail-header">
-        <p class="project-meta">Project 03 / Composites / 2026</p>
+        <p class="project-meta">Project 04 / Composites / 2026</p>
         <h2 class="project-title" id="project-dialog-title">Composite Wing Skin Layup</h2>
         <p class="project-detail-lede">Composite manufacturing work focused on layup process, material handling, and translating laminate design intent into repeatable hardware.</p>
       </header>
@@ -324,7 +358,7 @@
   <template id="project-ansys-structural">
     <article class="project-detail" data-project-slug="ansys-structural">
       <header class="project-detail-header">
-        <p class="project-meta">Project 04 / ANSYS / 2025–Present</p>
+        <p class="project-meta">Project 05 / ANSYS / 2025–Present</p>
         <h2 class="project-title" id="project-dialog-title"><span translate="no">ANSYS</span> Structural Analysis Study</h2>
         <p class="project-detail-lede">Structural and thermal analysis work using ANSYS as part of ongoing aerospace engineering projects.</p>
       </header>
@@ -338,7 +372,7 @@
   <template id="project-pid-simulink">
     <article class="project-detail" data-project-slug="pid-simulink">
       <header class="project-detail-header">
-        <p class="project-meta">Project 05 / Controls / 2026</p>
+        <p class="project-meta">Project 06 / Controls / 2026</p>
         <h2 class="project-title" id="project-dialog-title"><span translate="no">PID</span> Motor Control with <span translate="no">Simulink</span></h2>
         <p class="project-detail-lede">A control-system study using Simulink PID blocks to examine roll response, motor mixing, and the effect of changing vehicle geometry.</p>
       </header>
@@ -354,7 +388,7 @@
   <template id="project-manufacturing-clock">
     <article class="project-detail" data-project-slug="manufacturing-clock">
       <header class="project-detail-header">
-        <p class="project-meta">Project 06 / MECH 200A / Fall 2024</p>
+        <p class="project-meta">Project 07 / MECH 200A / Fall 2024</p>
         <h2 class="project-title" id="project-dialog-title">Machined Desk Clock</h2>
         <p class="project-detail-lede">The longest project in my manufacturing course: a functional clock assembled from an aluminum base, brass and steel pen holders, an acrylic face, and a standard clock mechanism.</p>
       </header>
@@ -412,7 +446,7 @@
   <template id="project-manufacturing-screwdriver">
     <article class="project-detail" data-project-slug="manufacturing-screwdriver">
       <header class="project-detail-header">
-        <p class="project-meta">Project 07 / MECH 200A / Fall 2024</p>
+        <p class="project-meta">Project 08 / MECH 200A / Fall 2024</p>
         <h2 class="project-title" id="project-dialog-title">Forged Screwdriver</h2>
         <p class="project-detail-lede">A multi-process screwdriver build combining CNC turning, knurling, forging, heat treatment, and grinding.</p>
       </header>
@@ -463,7 +497,7 @@
   <template id="project-manufacturing-coaster">
     <article class="project-detail" data-project-slug="manufacturing-coaster">
       <header class="project-detail-header">
-        <p class="project-meta">Project 08 / MECH 200A / Fall 2024</p>
+        <p class="project-meta">Project 09 / MECH 200A / Fall 2024</p>
         <h2 class="project-title" id="project-dialog-title">CNC Machined Coaster</h2>
         <p class="project-detail-lede">A HAAS CNC mill certification project focused on machine setup, tooling, G-code execution, and finishing rather than a long manual-machining sequence.</p>
       </header>
@@ -515,7 +549,7 @@
   <template id="project-injection-molded-screwdriver">
     <article class="project-detail" data-project-slug="injection-molded-screwdriver">
       <header class="project-detail-header">
-        <p class="project-meta">Project 09 / MECH 200A / Fall 2024</p>
+        <p class="project-meta">Project 10 / MECH 200A / Fall 2024</p>
         <h2 class="project-title" id="project-dialog-title">Injection Molded Screwdriver</h2>
         <p class="project-detail-lede">A hands-on injection molding project producing a screwdriver-shaped polymer part with a Morgan-Press machine.</p>
       </header>
