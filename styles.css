@@ -2214,3 +2214,5 @@ body,
 .project-card[data-project="manufacturing-coaster"] { --card-accent: var(--accent-blue); }
 .project-detail[data-project-slug="active-fin-stabilization-rocket"] { --detail-accent: var(--accent-coral); }
 .project-card-description { margin-top: .75rem; color: var(--copy); font-size: .85rem; line-height: 1.65; }
+.project-card[data-project="active-fin-stabilization-rocket"] .project-thumb img { object-fit: contain; }
+.project-detail[data-project-slug="active-fin-stabilization-rocket"] .project-detail-hero img { max-height: 680px; }

@@ -53,20 +53,10 @@
           </span>
         </button>
 
-        <button class="project-card" type="button" data-project="active-fin-stabilization-rocket" aria-haspopup="dialog" data-reveal>
+        <button class="project-card project-card--image" type="button" data-project="active-fin-stabilization-rocket" aria-haspopup="dialog" data-reveal>
           <span class="project-card-index">02</span>
-          <span class="project-thumb project-thumb--schematic">
-            <svg viewBox="0 0 640 400" role="img" aria-label="Conceptual rocket side view with movable upper fins and fixed lower fins; not to scale">
-              <g class="schematic-grid"><path d="M40 80H600M40 160H600M40 240H600M40 320H600M120 40V360M240 40V360M360 40V360M480 40V360"></path></g>
-              <g class="schematic-main">
-                <path d="M105 200Q142 175 190 181H530V219H190Q142 225 105 200ZM190 181V219M490 181V219"></path>
-                <path d="M454 181L496 139H520V181M454 219L496 261H520V219"></path>
-                <path d="M90 200H553" stroke-dasharray="6 7" opacity=".45"></path>
-              </g>
-              <g class="schematic-load"><path d="M262 181L282 134H311L305 181M262 219L282 266H311L305 219M275 153L310 165M275 247L310 235"></path><path d="M296 129V92H224M504 270V307H430"></path></g>
-              <g class="schematic-labels"><text x="102" y="82">ACTUATED FINS</text><text x="395" y="334">FIXED FINS</text></g>
-              <circle class="schematic-point" cx="293" cy="181" r="4"></circle><circle class="schematic-point" cx="293" cy="219" r="4"></circle>
-            </svg>
+          <span class="project-thumb">
+            <img src="images/active-fin/rocket.jpg" alt="Ram Rocketry Long Shot rocket with upper control fins and fixed lower fins beside a lake" width="1440" height="1920" loading="eager" decoding="async">
             <span class="project-thumb-scan" aria-hidden="true"></span>
           </span>
           <span class="project-card-body">
@@ -287,19 +277,9 @@
         <p class="project-detail-lede">A 3-inch-diameter experimental rocket built by Ram Rocketry to investigate active aerodynamic stabilization in flight. Four independently actuated upper fins were designed to generate corrective roll moments during coast, while a second set of fixed fins maintained passive stability.</p>
         <p class="drone-credit"><strong>My focus:</strong> Project leadership, system architecture, aerodynamic analysis, flight simulation, controls development, and integration.</p>
       </header>
-      <figure class="drone-figure">
-        <div class="project-detail-schematic"><svg viewBox="0 0 640 400" role="img" aria-label="Conceptual rocket side view with movable upper fins and fixed lower fins; not to scale">
-              <g class="schematic-grid"><path d="M40 80H600M40 160H600M40 240H600M40 320H600M120 40V360M240 40V360M360 40V360M480 40V360"></path></g>
-              <g class="schematic-main">
-                <path d="M105 200Q142 175 190 181H530V219H190Q142 225 105 200ZM190 181V219M490 181V219"></path>
-                <path d="M454 181L496 139H520V181M454 219L496 261H520V219"></path>
-                <path d="M90 200H553" stroke-dasharray="6 7" opacity=".45"></path>
-              </g>
-              <g class="schematic-load"><path d="M262 181L282 134H311L305 181M262 219L282 266H311L305 219M275 153L310 165M275 247L310 235"></path><path d="M296 129V92H224M504 270V307H430"></path></g>
-              <g class="schematic-labels"><text x="102" y="82">ACTUATED FINS</text><text x="395" y="334">FIXED FINS</text></g>
-              <circle class="schematic-point" cx="293" cy="181" r="4"></circle><circle class="schematic-point" cx="293" cy="219" r="4"></circle>
-            </svg></div>
-        <figcaption>Conceptual side view of the actuated upper fins and fixed lower fins. Schematic illustration, not to scale; only the fins visible in profile are shown.</figcaption>
+      <figure class="drone-figure project-detail-hero">
+        <a href="images/active-fin/rocket.jpg" target="_blank" rel="noopener"><img src="images/active-fin/rocket.jpg" alt="Long Shot active fin stabilization rocket, showing the upper control fins and fixed lower fins" width="1440" height="1920" loading="lazy" decoding="async"></a>
+        <figcaption>The Long Shot experimental rocket developed by Ram Rocketry.</figcaption>
       </figure>
       <dl class="drone-facts">
         <div><dt>Vehicle diameter</dt><dd>3 inches</dd></div>
@@ -307,12 +287,23 @@
         <div><dt>Motor</dt><dd>AeroTech H100W</dd></div>
         <div><dt>Predicted maximum velocity</dt><dd>Roughly 130 m/s</dd></div>
       </dl>
-      <div class="project-block"><h3 class="project-block-label">Technical summary</h3><div class="drone-copy">
-        <p>The vehicle was approximately 5 ft long and 2.2 kg, powered by an AeroTech H100W motor with a predicted maximum velocity of roughly 130 m/s. The control system combined a BNO055 IMU, LPS35HW barometric sensor, onboard timing hardware, and high-torque servos driving four movable fins.</p>
-        <p>I developed and worked with a six-degree-of-freedom MATLAB/Simulink model to study the vehicle’s translational and rotational response, including variable mass during motor burn, aerodynamic drag, fin forces, parachute descent, and Monte Carlo flight dispersion. The control concept kept the fins locked during powered ascent, then commanded discrete positive, negative, and neutral deflections during coast to evaluate their effect on roll.</p>
-        <p>The fin geometry was also evaluated in SolidWorks Flow Simulation at velocities up to approximately 130 m/s and multiple deflection angles. Those studies were used to examine pressure distribution, wake behavior, tip vortices, and changes to the trailing-edge geometry before manufacturing.</p>
-        <p>The project brought together mechanical design, CFD, flight dynamics, embedded electronics, and launch operations in one experimental platform. It also became an early testbed for the active-control work that Ram Rocketry later expanded into larger competition vehicles.</p>
-      </div></div>
+      <div class="project-block"><h3 class="project-block-label">Vehicle &amp; electronics</h3><div class="drone-copy"><p>The vehicle was approximately 5 ft long and 2.2 kg, powered by an AeroTech H100W motor with a predicted maximum velocity of roughly 130 m/s. The control system combined a BNO055 IMU, LPS35HW barometric sensor, onboard timing hardware, and high-torque servos driving four movable fins.</p></div></div>
+      <figure class="drone-figure">
+        <a href="images/active-fin/flight-control-board.png" target="_blank" rel="noopener"><img src="images/active-fin/flight-control-board.png" alt="RAM-FCU v1.2 circuit board rendering with servo connections, sensor interfaces, and power terminals" width="829" height="1427" loading="lazy" decoding="async"></a>
+        <figcaption>RAM-FCU v1.2 board layout with labeled servo connections, sensor interfaces, and power terminals.</figcaption>
+      </figure>
+      <div class="project-block"><h3 class="project-block-label">Flight dynamics &amp; controls</h3><div class="drone-copy"><p>I developed and worked with a six-degree-of-freedom MATLAB/Simulink model to study the vehicle’s translational and rotational response, including variable mass during motor burn, aerodynamic drag, fin forces, parachute descent, and Monte Carlo flight dispersion. The control concept kept the fins locked during powered ascent, then commanded discrete positive, negative, and neutral deflections during coast to evaluate their effect on roll.</p></div></div>
+      <div class="project-block"><h3 class="project-block-label">Altitude sensing</h3><div class="drone-copy"><figure class="drone-figure">
+        <a href="images/active-fin/altitude-filtering.png" target="_blank" rel="noopener"><img src="images/active-fin/altitude-filtering.png" alt="Raw and filtered altitude plotted against timestamp, with the filtered trace smoothing the raw measurements" width="578" height="455" loading="lazy" decoding="async"></a>
+        <figcaption>Raw and filtered altitude over approximately 60 seconds, showing the reduction in measurement noise.</figcaption>
+      </figure></div></div>
+      <div class="project-block"><h3 class="project-block-label">Aerodynamic analysis</h3><div class="drone-copy"><p>The fin geometry was also evaluated in SolidWorks Flow Simulation at velocities up to approximately 130 m/s and multiple deflection angles. Those studies were used to examine pressure distribution, wake behavior, tip vortices, and changes to the trailing-edge geometry before manufacturing.</p></div></div>
+      <figure class="drone-figure">
+        <a href="images/active-fin/fin-flow-simulation.png" target="_blank" rel="noopener"><img src="images/active-fin/fin-flow-simulation.png" alt="CFD velocity contours and flow vectors around a deflected fin with a visible downstream wake" width="947" height="1120" loading="lazy" decoding="async"></a>
+        <figcaption>Velocity contours and flow vectors around a deflected fin from the SolidWorks Flow Simulation study.</figcaption>
+      </figure>
+      <div class="project-block"><h3 class="project-block-label">Project integration</h3><div class="drone-copy"><p>The project brought together mechanical design, CFD, flight dynamics, embedded electronics, and launch operations in one experimental platform. It also became an early testbed for the active-control work that Ram Rocketry later expanded into larger competition vehicles.</p></div></div>
+
     </article>
   </template>
 
