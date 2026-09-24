@@ -2220,3 +2220,4 @@ body,
 .project-detail[data-project-slug="nasa-usli-2024-2025"] { --detail-accent: var(--accent-cyan); }
 .project-card[data-project="nasa-usli-2024-2025"] .project-thumb img { object-fit: contain; }
 .leadership-figure--l1 img { height: auto; max-height: 760px; object-fit: contain; }
+.project-video-action { display: block; padding: .75rem .25rem .25rem; font-weight: 700; line-height: 1.5; }
