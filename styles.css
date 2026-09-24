@@ -2219,4 +2219,4 @@ body,
 .project-card[data-project="nasa-usli-2024-2025"] { --card-accent: var(--accent-cyan); }
 .project-detail[data-project-slug="nasa-usli-2024-2025"] { --detail-accent: var(--accent-cyan); }
 .project-card[data-project="nasa-usli-2024-2025"] .project-thumb img { object-fit: contain; }
-.leadership-figure--l1 img { max-height: 760px; object-fit: contain; }
+.leadership-figure--l1 img { height: auto; max-height: 760px; object-fit: contain; }
