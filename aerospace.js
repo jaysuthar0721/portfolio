@@ -21,10 +21,8 @@
         <circle class="orbit-line orbit-line--dash" cx="1130" cy="370" r="330"/>
         <circle class="orbit-line" cx="1130" cy="370" r="415"/>
         <circle class="orbit-line orbit-line--arc" cx="1130" cy="370" r="286"/>
-        <path class="orbit-line orbit-line--dash" d="M-160 770 Q250 170 820 -60"/>
-        <path class="orbit-line" d="M-140 830 Q270 230 880 0"/>
-        <path class="orbit-crosshair" d="M1080 370h100M1130 320v100"/>
-        <circle class="orbit-crosshair" cx="1130" cy="370" r="10"/>
+        <path class="orbit-crosshair" d="M1104 370h52M1130 344v52"/>
+        <circle class="orbit-crosshair" cx="1130" cy="370" r="7"/>
 
         <g class="orbit-rotor orbit-rotor--inner">
           <g class="orbital-craft" transform="translate(880 370)">
@@ -37,7 +35,7 @@
         <g class="orbit-rotor orbit-rotor--mid">
           <g class="orbital-craft" transform="translate(800 370)">
             <circle class="craft-pulse" cx="0" cy="0" r="7"/>
-            <path class="craft-core" d="M0-7L5 4L0 2L-5 4Z"/>
+            <path class="craft-core craft-core--probe" d="M0 8L5-4L0-2L-5-4Z"/>
           </g>
         </g>
 
@@ -65,7 +63,7 @@
         <path class="flight-trail" d="M4 46 Q115 46 190 27 T352 7"/>
         <g class="flight-vehicle">
           <circle class="flight-vehicle-pulse" cx="0" cy="0" r="8"/>
-          <path d="M-7-3L8 0-7 3-3 0Z"/>
+          <path d="M-6-2.6L7.5 0-6 2.6-2.3 0Z"/>
         </g>
         <path class="flight-tick" d="M4 40v12m86-14v12m87-25v12m87-25v12m87-24v12"/>
       </svg>`;
