@@ -2228,3 +2228,28 @@ body,
 .section, .leadership-section { grid-template-columns: minmax(0, 1fr); }
 .section > *, .leadership-section-body { grid-column: 1; }
 .footer-copy { text-transform: none; }
+
+
+/* Remove decorative horizontal rules that add visual clutter. */
+.nav,
+.drone-facts,
+.leadership-facts,
+.mfg-credential,
+.project-detail-header,
+.featured-facts,
+.footer-callout {
+  border-bottom: 0;
+}
+
+.ownership-list > div {
+  border-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .irec-metrics article,
+  .leadership-facts > div,
+  .mfg-credential > div,
+  .mfg-facts > div {
+    border-bottom: 0;
+  }
+}
