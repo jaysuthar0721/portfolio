@@ -2219,7 +2219,38 @@ body,
 .project-card[data-project="nasa-usli-2024-2025"] { --card-accent: var(--accent-cyan); }
 .project-detail[data-project-slug="nasa-usli-2024-2025"] { --detail-accent: var(--accent-cyan); }
 .project-card[data-project="nasa-usli-2024-2025"] .project-thumb img { object-fit: contain; }
-.leadership-figure--l1 img { height: auto; max-height: 760px; object-fit: contain; }
+.leadership-l1-flow {
+  max-width: 58rem;
+  display: flow-root;
+}
+.leadership-l1-flow > p {
+  color: var(--copy);
+  line-height: 1.85;
+}
+.leadership-l1-flow > p + p { margin-top: 1rem; }
+
+.leadership-figure--l1 {
+  float: right;
+  width: min(38%, 320px);
+  margin: 0 0 1rem 2rem;
+}
+.leadership-figure--l1 img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+.leadership-figure--l1 figcaption {
+  max-width: 100%;
+}
+
+@media (max-width: 700px) {
+  .leadership-figure--l1 {
+    float: none;
+    width: min(100%, 380px);
+    margin: 0 auto 1.5rem;
+  }
+}
 .project-video-action { display: block; padding: .75rem .25rem .25rem; font-weight: 700; line-height: 1.5; }
 
 /* Simplified headings and section layout. */
