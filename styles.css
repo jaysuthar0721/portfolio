@@ -1953,7 +1953,7 @@ body,
   min-height: 185px;
   position: relative;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 1.2rem;
   align-items: start;
   padding: 1.35rem;
@@ -2181,7 +2181,7 @@ body,
   .featured-work { margin-top: 5rem; }
   .directory-card {
     min-height: 150px;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
   }
   .featured-facts {
     grid-template-columns: minmax(0,1fr);
