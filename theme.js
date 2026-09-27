@@ -1,4 +1,4 @@
-/* Persistent light / AMOLED theme switcher. */
+/* Persistent light / dark theme switcher. */
 (() => {
   'use strict';
 
@@ -30,10 +30,8 @@
     document.querySelectorAll('.theme-toggle').forEach((button) => {
       const dark = theme === 'dark';
       button.setAttribute('aria-pressed', String(dark));
-      button.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to AMOLED dark mode');
-      button.setAttribute('title', dark ? 'Light mode' : 'AMOLED dark mode');
-      const label = button.querySelector('.theme-toggle-label');
-      if (label) label.textContent = dark ? 'Light' : 'AMOLED';
+      button.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      button.setAttribute('title', dark ? 'Switch to light mode' : 'Switch to dark mode');
     });
   }
 
@@ -51,16 +49,12 @@
         <span class="theme-toggle-body"></span>
         <span class="theme-toggle-satellite"></span>
       </span>
-      <span class="theme-toggle-label"></span>
     `;
 
     button.addEventListener('click', () => {
       const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
       applyTheme(next);
       writeTheme(next);
-      button.classList.remove('theme-toggle--fired');
-      void button.offsetWidth;
-      button.classList.add('theme-toggle--fired');
     });
 
     nav.append(button);
