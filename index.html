@@ -55,12 +55,14 @@
           </h1>
         </div>
 
-        <p class="hero-intro">
-          I’m a mechanical engineering student at Colorado State University, focused on aerospace systems, propulsion, and fluid dynamics. Through Ram Rocketry, research, and course projects, I work across mechanical design, simulation, electronics, and testing.
+        <p class="hero-intro hero-intro--lead">
+          Mechanical engineering at Colorado State University, focused on aerospace systems, flight controls, propulsion, and experimental engineering. I build and test hardware across rockets, embedded controls, simulation, manufacturing, and research.
         </p>
-        <p class="hero-intro">
-          For a variable geometry drone, I built the wireless control system, integrated the motion sensor, and tuned the attitude controller on a test stand. This portfolio covers the decisions behind that work, what happened during testing, and what I learned along the way.
-        </p>
+        <dl class="hero-proof" aria-label="Engineering focus areas">
+          <div><dt>Flight systems</dt><dd>Rockets + controls</dd></div>
+          <div><dt>Research</dt><dd>IFE + diagnostics</dd></div>
+          <div><dt>Program work</dt><dd>IREC + Ram Rocketry</dd></div>
+        </dl>
 
         <div class="hero-ctas">
           <a href="projects.html" class="btn btn-primary">Explore projects <span aria-hidden="true">&nearr;</span></a>
@@ -79,7 +81,7 @@
         <a class="directory-card directory-card--blue" href="projects.html">
           <span class="directory-copy">
             <strong>Projects</strong>
-            <small>Design, controls, simulation, manufacturing, and test work.</small>
+            <small>Flagship aerospace case studies plus controls, analysis, and manufacturing work.</small>
           </span>
           <span class="directory-arrow" aria-hidden="true">↗</span>
         </a>
@@ -87,7 +89,7 @@
         <a class="directory-card directory-card--coral" href="leadership.html">
           <span class="directory-copy">
             <strong>Leadership</strong>
-            <small>Ram Rocketry, IREC systems work, team structure, and program execution.</small>
+            <small>Ram Rocketry growth, IREC systems integration, team structure, and execution.</small>
           </span>
           <span class="directory-arrow" aria-hidden="true">↗</span>
         </a>
@@ -110,26 +112,37 @@
       </div>
     </section>
 
-    <section class="featured-work" aria-labelledby="featured-work-title" data-reveal>
-      <div class="featured-work-copy">
-        <h2 id="featured-work-title">Variable Geometry Drone</h2>
-        <p>
-          A reconfigurable quadcopter built around a custom ESP32 flight controller. My work centered on the electronics architecture, wireless commands, attitude estimation, motor control, and test-stand tuning.
-        </p>
-
-        <dl class="featured-facts">
-          <div><dt>Flight computer</dt><dd>ESP32 + MPU-6050</dd></div>
-          <div><dt>Motor interface</dt><dd>DSHOT300</dd></div>
-          <div><dt>Loop target</dt><dd>250 Hz</dd></div>
-        </dl>
-
-        <a href="projects.html#variable-geometry-drone" class="btn btn-primary">Open case study <span aria-hidden="true">↗</span></a>
+    <section class="home-flagships" aria-labelledby="flagships-title" data-reveal>
+      <div class="home-section-heading">
+        <p class="section-kicker">Selected engineering work</p>
+        <h2 id="flagships-title">Three projects that define the portfolio.</h2>
       </div>
-
-      <a class="featured-work-image" href="projects.html#variable-geometry-drone" aria-label="Open Variable Geometry Drone case study">
-        <img src="images/drone/configurations.webp" alt="Variable geometry drone shown in extended and folded arm configurations" width="916" height="461" loading="lazy" decoding="async">
-        <span class="featured-image-caption"><span>MECH 307 / Spring 2026</span><span>Controls + Embedded Systems</span></span>
-      </a>
+      <div class="flagship-grid">
+        <a class="flagship-card" href="active-fin-stabilization.html">
+          <img src="images/active-fin/rocket.jpg" alt="Ram Rocketry active-fin stabilization rocket with upper control fins and fixed lower fins" width="1440" height="1920" loading="lazy" decoding="async">
+          <span class="flagship-card-copy">
+            <span class="flagship-meta">Flight controls · Ram Rocketry</span>
+            <strong>Active Fin Stabilization Rocket</strong>
+            <span>Servo-actuated aerodynamic control, onboard sensing, simulation, CFD, and flight-system integration.</span>
+          </span>
+        </a>
+        <a class="flagship-card" href="leadership.html#irec-program">
+          <img src="images/ram-rocketry/full-club-photo.jpg" alt="Ram Rocketry team at Colorado State University" width="1536" height="1024" loading="lazy" decoding="async">
+          <span class="flagship-card-copy">
+            <span class="flagship-meta">Systems leadership · IREC 2027</span>
+            <strong>IREC / Ram Rocketry Program</strong>
+            <span>Requirements, interfaces, schedule, reviews, validation, and technical coordination across a student launch vehicle.</span>
+          </span>
+        </a>
+        <a class="flagship-card" href="about.html#research">
+          <img src="images/jay-research-poster-cover.jpeg" alt="Jay Suthar beside an inertial fusion energy research poster" width="1024" height="870" loading="lazy" decoding="async">
+          <span class="flagship-card-copy">
+            <span class="flagship-meta">Research · CSU</span>
+            <strong>IFE Nanowire Research</strong>
+            <span>Nanofabrication, SEM characterization, precision fixtures, and optical diagnostics for laser-target experiments.</span>
+          </span>
+        </a>
+      </div>
     </section>
   </main>
 
