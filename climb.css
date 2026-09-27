@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "MS33558";
+  src: url("https://static.wfonts.com/data/2016/05/15/ms-33558/MS33558.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 /* Climb to orbit: theme-native, scroll-only motion. No idle animation. */
 /* Reserve a slim telemetry row inside the sticky header, away from page copy. */
 html.has-climb .nav { padding-bottom: calc(.8rem + 1.25rem); }
@@ -43,7 +51,7 @@ html.has-climb .nav { padding-bottom: calc(.8rem + 1.25rem); }
   padding: .3rem .5rem;
   background: var(--bg);
   color: var(--accent-green);
-  font: 500 .625rem/1.5 ui-monospace, SFMono-Regular, Consolas, monospace;
+  font: 400 .625rem/1.5 "MS33558", ui-monospace, SFMono-Regular, Consolas, monospace;
   font-variant-numeric: tabular-nums;
   letter-spacing: .12em;
 }
