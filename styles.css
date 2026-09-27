@@ -2291,3 +2291,49 @@ body,
     border-bottom: 0;
   }
 }
+
+
+/* Static baseline: legacy motion removed pending redesign. */
+html { scroll-behavior: auto; }
+
+*, *::before, *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+.aerospace-backdrop,
+.flight-accent,
+.motion-toggle {
+  display: none !important;
+}
+
+[data-reveal],
+[data-reveal].reveal-pending,
+[data-reveal].revealed,
+[data-hero],
+[data-hero].revealed {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.btn:hover span,
+.btn:focus-visible span,
+.nav-links a::after,
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after,
+.directory-card:hover,
+.directory-card:focus-visible,
+.directory-card:hover::after,
+.directory-card:focus-visible::after,
+.directory-card:hover .directory-arrow,
+.directory-card:focus-visible .directory-arrow,
+.featured-work-image:hover,
+.featured-work-image:focus-visible,
+.footer-callout:hover span,
+.footer-callout:focus-visible span,
+.theme-toggle-orbit,
+.theme-toggle-body::after,
+.theme-toggle--fired .theme-toggle-orbit,
+.hero-scroll-orbit i {
+  transform: none !important;
+}
