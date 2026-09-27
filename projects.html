@@ -31,8 +31,10 @@
   </nav>
 
   <main id="main" class="project-index">
-    <div class="title-block" data-reveal>
+    <div class="title-block project-index-intro" data-reveal>
+      <p class="section-kicker">Engineering portfolio</p>
       <h1 class="page-title">Projects</h1>
+      <p class="project-index-lede">Start with the flagship case studies for the most complete design, controls, integration, and test work. Additional engineering work follows as a compact archive.</p>
     </div>
 
     <section class="project-grid-shell" aria-label="Engineering projects">
@@ -40,8 +42,12 @@
         <path pathLength="100" d="M-40 650 C180 590 210 155 485 188 S720 640 910 440 S1110 135 1260 190"></path>
       </svg>
 
+      <div class="project-tier-heading">
+        <span>Flagship case studies</span>
+        <p>Full project narratives with design decisions, technical evidence, and test results.</p>
+      </div>
       <div class="project-grid">
-        <button class="project-card project-card--image" type="button" data-project="variable-geometry-drone" aria-haspopup="dialog" data-reveal>
+        <a class="project-card project-card--flagship project-card--image" href="variable-geometry-drone.html" data-reveal>
           <span class="project-thumb">
             <img src="images/drone/configurations.webp" alt="Top views of the variable geometry drone in extended and folded configurations" width="916" height="461" loading="eager">
             <span class="project-thumb-scan" aria-hidden="true"></span>
@@ -50,9 +56,9 @@
             <strong class="project-card-title">Variable Geometry Drone</strong>
             <span class="project-card-footer"><span>Spring 2026</span><span class="project-card-open">Open case study <b aria-hidden="true">↗</b></span></span>
           </span>
-        </button>
+        </a>
 
-        <button class="project-card project-card--image" type="button" data-project="active-fin-stabilization-rocket" aria-haspopup="dialog" data-reveal>
+        <a class="project-card project-card--flagship project-card--image" href="active-fin-stabilization.html" data-reveal>
           <span class="project-thumb">
             <img src="images/active-fin/rocket.jpg" alt="Ram Rocketry Long Shot rocket with upper control fins and fixed lower fins beside a lake" width="1440" height="1920" loading="eager" decoding="async">
             <span class="project-thumb-scan" aria-hidden="true"></span>
@@ -62,9 +68,9 @@
             <span class="project-card-description">A high-power rocket developed to test active aerodynamic control using four servo-actuated fins, onboard inertial sensing, and a custom flight-control system.</span>
             <span class="project-card-footer"><span>2025–2026 · Ram Rocketry</span><span class="project-card-open">Open case study <b aria-hidden="true">↗</b></span></span>
           </span>
-        </button>
+        </a>
 
-        <button class="project-card project-card--image" type="button" data-project="nasa-usli-2024-2025" aria-haspopup="dialog" data-reveal>
+        <a class="project-card project-card--flagship project-card--image" href="nasa-usli.html" data-reveal>
           <span class="project-thumb">
             <img src="images/nasa-usli/team.jpg" alt="NASA USLI team holding their green and white rocket at the launch field" width="4186" height="2791" loading="lazy" decoding="async">
             <span class="project-thumb-scan" aria-hidden="true"></span>
@@ -74,9 +80,14 @@
             <span class="project-card-description">Payload Bay Specialist for Colorado State University’s NASA Student Launch team, responsible for the mechanical and electronics integration of the rocket’s payload assembly through the competition design cycle.</span>
             <span class="project-card-footer"><span>2024–2025 · Ram Launch Initiative</span><span class="project-card-open">Open case study <b aria-hidden="true">↗</b></span></span>
           </span>
-        </button>
+        </a>
 
-        <button class="project-card" type="button" data-project="composite-wing-skin" aria-haspopup="dialog" data-reveal>
+        <div class="project-grid-break" aria-hidden="true"></div>
+        <div class="project-tier-heading project-tier-heading--secondary">
+          <span>Additional engineering work</span>
+          <p>Controls, analysis, composites, and manufacturing projects.</p>
+        </div>
+        <button class="project-card project-card--secondary" type="button" data-project="composite-wing-skin" aria-haspopup="dialog" data-reveal>
           <span class="project-thumb project-thumb--schematic">
             <svg viewBox="0 0 640 400" role="img" aria-label="Technical schematic representing composite ply layers and a tapered wing panel">
               <g class="schematic-grid">
@@ -99,7 +110,7 @@
           </span>
         </button>
 
-        <button class="project-card" type="button" data-project="ansys-structural" aria-haspopup="dialog" data-reveal>
+        <button class="project-card project-card--secondary" type="button" data-project="ansys-structural" aria-haspopup="dialog" data-reveal>
           <span class="project-thumb project-thumb--schematic">
             <svg viewBox="0 0 640 400" role="img" aria-label="Technical schematic representing a finite-element mesh and structural load path">
               <g class="schematic-grid">
@@ -124,7 +135,7 @@
           </span>
         </button>
 
-        <button class="project-card" type="button" data-project="pid-simulink" aria-haspopup="dialog" data-reveal>
+        <button class="project-card project-card--secondary" type="button" data-project="pid-simulink" aria-haspopup="dialog" data-reveal>
           <span class="project-thumb project-thumb--schematic">
             <svg viewBox="0 0 640 400" role="img" aria-label="Technical schematic representing a closed-loop PID control system">
               <g class="schematic-grid">
@@ -153,7 +164,7 @@
           </span>
         </button>
 
-        <button class="project-card project-card--manufacturing project-card--image" type="button" data-project="manufacturing-clock" aria-haspopup="dialog" data-reveal>
+        <button class="project-card project-card--secondary project-card--manufacturing project-card--image" type="button" data-project="manufacturing-clock" aria-haspopup="dialog" data-reveal>
           <span class="project-thumb">
             <img src="images/manufacturing/clock.webp" alt="Finished machined desk clock with acrylic face, aluminum base, brass pen holder, and steel pen holder" width="800" loading="lazy" decoding="async">
             <span class="project-thumb-scan" aria-hidden="true"></span>
@@ -164,7 +175,7 @@
           </span>
         </button>
 
-        <button class="project-card project-card--manufacturing project-card--image" type="button" data-project="manufacturing-screwdriver" aria-haspopup="dialog" data-reveal>
+        <button class="project-card project-card--secondary project-card--manufacturing project-card--image" type="button" data-project="manufacturing-screwdriver" aria-haspopup="dialog" data-reveal>
           <span class="project-thumb">
             <img src="images/manufacturing/screwdriver.webp" alt="Patterned image of the forged and machined screwdriver project" width="800" loading="lazy" decoding="async">
             <span class="project-thumb-scan" aria-hidden="true"></span>
@@ -175,7 +186,7 @@
           </span>
         </button>
 
-        <button class="project-card project-card--manufacturing project-card--image" type="button" data-project="manufacturing-coaster" aria-haspopup="dialog" data-reveal>
+        <button class="project-card project-card--secondary project-card--manufacturing project-card--image" type="button" data-project="manufacturing-coaster" aria-haspopup="dialog" data-reveal>
           <span class="project-thumb">
             <img src="images/manufacturing/coaster.webp" alt="Patterned image of the CNC machined coaster project" width="800" loading="lazy" decoding="async">
             <span class="project-thumb-scan" aria-hidden="true"></span>
@@ -186,7 +197,7 @@
           </span>
         </button>
 
-        <button class="project-card project-card--manufacturing project-card--image" type="button" data-project="injection-molded-screwdriver" aria-haspopup="dialog" data-reveal>
+        <button class="project-card project-card--secondary project-card--manufacturing project-card--image" type="button" data-project="injection-molded-screwdriver" aria-haspopup="dialog" data-reveal>
           <span class="project-thumb">
             <img src="images/manufacturing/injection-molded-screwdriver.webp" alt="Morgan Press injection molding machine with the molded white screwdriver visible beside it" width="800" loading="lazy" decoding="async">
             <span class="project-thumb-scan" aria-hidden="true"></span>
