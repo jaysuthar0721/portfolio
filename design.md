@@ -1,52 +1,105 @@
 # Jay Suthar portfolio design
 
-## Direction
-Swiss industrial typography: white background, CSU green, geometric headings, restrained rules, and no shadows or decorative gradients. The site is plain HTML, CSS, and JavaScript, with no build step. Preserve Unbounded for headings and Geist for body text.
+## Product purpose
 
-## Tokens
-- Background: `#ffffff`; primary text: `#151a16`; body text: `#454d46`.
-- Muted labels: `#606760`, replacing the previous low-contrast gray.
-- Green: `#1e4d2b`; green hover: `#266138`.
-- Active navigation and resume link: `#a84300`, a darker orange for readable small text.
-- Dividers: `#dce1dc`; image placeholder fill: `#f3f5f3`.
-- Content width: 1280px. Horizontal padding scales from 20px to 80px.
+This portfolio is a technical record for aerospace and mechanical engineering recruiting. The primary job of each page is to make the engineering contribution, evidence, and scope easy to scan before a visitor chooses to read deeply.
 
-## Layout
-- Navigation: compact sticky white bar with a thin divider, two links, 44px minimum link height, and an underlined current page.
-- Home: two columns. Name, introduction, and project-first actions on the left; an existing portrait in a solid green frame on the right. No image masking. The two introductory paragraphs remain separate for reading.
-- At 700px and below, the portrait follows the introduction and remains visible. No horizontal overflow at small phone widths.
-- About: section labels in a narrow left column; headings and prose in a wider right column. Competencies are separated by thin rules.
-- Projects: large titles, honest image placeholders, and a label/content grid for Challenge, Action, and Impact. Do not fabricate photos or completed case studies.
-- Interior label/content grids stack below 700px.
-- Footer: compact divider, wrapping links, visible keyboard focus.
+## Visual direction
 
-## Typography and interaction
-- Hero name: responsive 48–93px display type on desktop; sized separately for mobile.
-- Body: approximately 15–16px with 1.8–1.85 line height; paragraph width capped.
-- Metadata: small uppercase labels with restrained tracking.
-- Buttons: rectangular, at least 48px tall. Green hover for the primary action.
-- All page content is visible without JavaScript. Scroll reveals opt into a pending state only after the observer is installed. A zero intersection threshold prevents long project articles from staying hidden on short viewports.
-- Reduced-motion preference disables transitions and reveals hidden pending content.
-- Use semantic landmarks, descriptive alt text, current-page attributes, and a skip link.
+Engineering notebook meets aerospace flight documentation.
 
-## Content scope
-This pass changes presentation, not biographical claims or project narratives. Existing placeholder project copy and contact destinations require a separate content pass. Keep generated writing specific, factual, and free of em dashes.
+- Unbounded remains the display typeface.
+- Geist remains the body and interface typeface.
+- CSU green is the identity color.
+- Cyan is reserved for technical data, secondary labels, and engineering navigation cues.
+- Orange is reserved for active status and interaction emphasis.
+- The previous rotating rainbow accent system is no longer the design direction.
+- Real project imagery, schematics, tables, and test evidence should provide most visual variation.
 
-`styles.css` is the canonical implementation. Keep this document aligned when the design changes.
+## Motion
 
-## Aerospace motion
-Decorative SVG orbital paths sit behind all pages at low opacity. Two markers travel slowly around the paths; mobile displays one. A small trajectory below the homepage actions has a moving vehicle marker. Buttons and navigation use brief directional hover/focus cues. These visuals are decorative, not flight-data visualizations.
+The scroll-driven climb-to-orbit layer is the signature motion system.
 
-Motion uses CSS animations with no third-party libraries or continuous JavaScript rendering. The footer pause button persists the choice across pages when storage is available. System reduced-motion always takes precedence; background-tab animations pause. SVGs are hidden from assistive technology and cannot intercept clicks. All content remains available without JavaScript.
+- Atmospheric flow transitions into an orbital diagram as scroll progress increases.
+- Motion is driven by scroll and uses transform or opacity where practical.
+- Reduced-motion preferences are respected.
+- The mobile header does not reserve space for the altitude readout.
+- Legacy ambient orbit rotors, project scan lines, telemetry pulses, and card-tilt motion are not part of the active visual language.
+- Hover and focus feedback should stay short and interruptible.
 
+## Information architecture
 
-## Leadership case study
-The site includes a dedicated Ram Rocketry leadership page. It uses the same editorial system as the rest of the portfolio, but treats leadership as an engineering case study rather than a résumé list. The page separates organization building from IREC program leadership, distinguishes the formal Project Coordinator title from the broader Chief Engineer role, and uses current subscale metrics to show the technical scope being coordinated.
+### Home
 
-Ram Rocketry imagery comes from the team's Drive photo library. Use a small number of contextual images with descriptive captions rather than a large gallery. Leadership lessons are written as process changes with concrete operating rules, including earlier task assignment, explicit decision ownership, shared success metrics, and documentation/test planning.
+The first viewport identifies Jay as a mechanical engineering student working in aerospace systems, flight controls, propulsion, and experimental engineering.
 
+A short proof strip immediately establishes three areas:
+- Flight systems
+- Research
+- Program work
 
-## Manufacturing project tab
-Projects now has an internal two-tab navigation: Project case studies and Manufacturing. Manufacturing lives at `manufacturing.html` so it can carry a longer process-focused narrative without crowding the main case-study page.
+The homepage then points to three representative bodies of work:
+- Active Fin Stabilization Rocket
+- IREC / Ram Rocketry systems leadership
+- IFE nanowire research
 
-The manufacturing page follows the existing editorial layout and uses real MECH 200A source material: the Fall 2024 milling process summary, the production-traveler midterm exercise, Haas CNC mill operator training, and class-era machining photos. Keep claims scoped to coursework or simulated manufacturing scenarios when appropriate. The legacy Wix portfolio remains linked as an external reference rather than embedded.
+### Projects
+
+Projects are divided into:
+1. Flagship case studies
+2. Additional engineering work
+
+Every project card links to a standalone HTML page. Project content must not depend on JavaScript to be readable or shareable.
+
+Flagship projects receive the strongest visual and narrative emphasis. Coursework and manufacturing projects remain available, but they do not compete equally with the primary aerospace case studies.
+
+Each project card should provide:
+- Project title
+- One-sentence technical scope
+- Date and context
+- One consistent open action
+
+### About and research
+
+Research should be explained as an engineering workflow, not only as long-form prose. When source imagery exists, connect visuals to fabrication, characterization, hardware integration, and diagnostics.
+
+Do not publish placeholder language such as "coming soon."
+
+### Leadership
+
+Leadership is treated as an engineering case study rather than a resume list. Membership counts, role titles, and current/former status must remain consistent across the page.
+
+## Interaction and accessibility
+
+- Keep the skip link and semantic landmarks.
+- Keep visible keyboard focus.
+- Maintain minimum 44px interactive targets.
+- All essential content must remain available without JavaScript.
+- Use descriptive alt text for meaningful images.
+- Respect prefers-reduced-motion.
+- The narrow-screen header keeps all four destinations visible and preserves a 44px theme control.
+- Do not communicate state by color alone.
+
+## Theme behavior
+
+Light and AMOLED themes are both supported.
+
+If the visitor has not explicitly chosen a theme, follow the system color-scheme preference. A manual choice persists locally.
+
+## Content discipline
+
+Use concrete engineering language.
+
+Prefer:
+- requirement
+- interface
+- test
+- measurement
+- design decision
+- failure
+- result
+- tradeoff
+
+Avoid generic UI narration, decorative technical jargon, and unfinished-site copy.
+
+The site is plain HTML, CSS, and JavaScript with no build step. `styles.css` is the canonical visual implementation, `climb.css` owns the climb layer, and this document should be updated whenever the design direction changes.
