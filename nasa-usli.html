@@ -34,17 +34,49 @@
       <header class="project-detail-header">
         <h2 class="project-title" id="project-dialog-title">NASA University Student Launch</h2>
         <p class="project-detail-lede">As Payload Bay Specialist for CSU’s 2024–25 NASA University Student Launch team, I worked at the interface between mechanical design and embedded electronics. My role centered on developing the payload-bay architecture, packaging its avionics, and ensuring the subsystem could be integrated into the larger launch vehicle.</p>
-        <p class="drone-credit"><strong>My focus:</strong> Payload bay design, CAD, electronics packaging, sensor integration, system analysis, and design-review documentation.</p>
+        <p class="drone-credit"><strong>My focus:</strong> Payload bay design, CAD, electronics schematics in KiCad and Fusion 360 Electronics, sensor testing and soldering, electronics packaging, system analysis, and design-review documentation.</p>
       </header>
       <figure class="drone-figure project-detail-hero">
         <a href="images/nasa-usli/team.jpg" target="_blank" rel="noopener"><img src="images/nasa-usli/team.jpg" alt="NASA USLI team holding their green and white rocket at the launch field" width="4186" height="2791" loading="lazy" decoding="async"></a>
         <figcaption>The 2024–2025 NASA USLI team with the rocket.</figcaption>
       </figure>
+      <dl class="drone-facts">
+        <div><dt>Microcontroller</dt><dd>Teensy 4.1</dd></div>
+        <div><dt>Sensors</dt><dd>BNO055 IMU, BMP384 pressure, PCF8523 RTC, thermistor</dd></div>
+        <div><dt>Transmission</dt><dd>144.39 MHz, 2,500 ft target range</dd></div>
+        <div><dt>Schematic tools</dt><dd>KiCad, Fusion 360 Electronics</dd></div>
+      </dl>
+        <div class="project-block"><h3 class="project-block-label">Mission</h3><div class="drone-copy">
+          <p>The 2024–25 challenge was to design, build, and fly a reusable launch vehicle carrying a payload that collects, stores, and transmits data sets to a NASA-owned receiver. CSU’s design used a non-deployable payload in the forward section that recorded four data sets: apogee, landing-site temperature, time of landing, and maximum velocity.</p>
+        </div></div>
         <div class="project-block"><h3 class="project-block-label">Payload / Data collection</h3><div class="drone-copy">
-          <p>I designed and analyzed the payload bay assembly in SolidWorks while using Fusion 360 Electronics to develop and organize the electronics architecture. The system integrated a Teensy 4.1 with a BNO055 inertial measurement unit, BMP384 pressure sensor, and PCF8523 real-time clock, requiring the mechanical layout and electronics to be developed together within the available payload volume.</p>
+          <p>I designed and analyzed the payload bay assembly in SolidWorks and drew the payload electronics schematics in KiCad and Fusion 360 Electronics. The system integrated a Teensy 4.1 with a BNO055 inertial measurement unit, BMP384 pressure sensor, and PCF8523 real-time clock, requiring the mechanical layout and electronics to be developed together within the available payload volume.</p>
         <figure class="drone-figure">
           <a href="images/nasa-usli/payload-data-collection.png" target="_blank" rel="noopener"><img src="images/nasa-usli/payload-data-collection.png" alt="Payload assembly diagram with labeled BMP384, BNO055, PCF8523, Teensy 4.1, and rotary switch" width="1144" height="678" loading="lazy" decoding="async"></a>
             <figcaption>Data collection assembly showing the payload’s labeled electronics.</figcaption>
+        </figure>
+          <p>Each data set came from a specific sensor and calculation. The BMP384 pressure reading gave apogee through the barometric formula, with a ±50 ft target. A thermistor gave landing-site temperature through the Steinhart-Hart equation, to ±5 °F. The PCF8523 real-time clock logged time of landing to ±5 s, and the BNO055 IMU sampled at 200 Hz to derive maximum velocity within 10%.</p>
+        <figure class="drone-figure">
+          <a href="images/nasa-usli/payload-assembly.webp" target="_blank" rel="noopener"><img src="images/nasa-usli/payload-assembly.webp" alt="CAD rendering of the payload sled between two bulkheads, dimensioned at 10.5 inches and 15.5 inches" width="1600" height="797" loading="lazy" decoding="async"></a>
+            <figcaption>Payload mechanical assembly that the electronics had to fit inside.</figcaption>
+        </figure>
+        </div></div>
+        <div class="project-block"><h3 class="project-block-label">Sensor testing &amp; soldering</h3><div class="drone-copy">
+          <p>The schematics were the reference for wiring a breadboard prototype and, later, for soldering the flight hardware. Before anything was soldered, I helped test the sensors on the breadboard to confirm each one communicated with the Teensy and returned sensible readings. Raw IMU acceleration was logged and compared against a filtered signal to check how much noise the velocity calculation would have to deal with. Once the sensors were validated, I helped solder them for integration into the payload.</p>
+        <figure class="drone-figure">
+          <a href="images/nasa-usli/sensor-breadboard.webp" target="_blank" rel="noopener"><img src="images/nasa-usli/sensor-breadboard.webp" alt="Breadboard prototype wiring a Teensy 4.1 to the real-time clock, IMU, and pressure sensor breakout boards" width="780" height="320" loading="lazy" decoding="async"></a>
+            <figcaption>Breadboard prototype of the data collection system, used to test the sensors before soldered integration.</figcaption>
+        </figure>
+        <figure class="drone-figure">
+          <a href="images/nasa-usli/imu-data.webp" target="_blank" rel="noopener"><img src="images/nasa-usli/imu-data.webp" alt="Line chart comparing raw and filtered IMU acceleration, with the filtered trace much smoother than the raw signal" width="1600" height="952" loading="lazy" decoding="async"></a>
+            <figcaption>Raw versus filtered IMU acceleration from bench testing.</figcaption>
+        </figure>
+        </div></div>
+        <div class="project-block"><h3 class="project-block-label">Transmission system</h3><div class="drone-copy">
+          <p>After landing, the payload had to transmit its data at 144.39 MHz to a receiver 2,500 ft away while staying under 5 W. The chain ran from the battery through relays and a buck converter to an SX1276 transceiver, a VeGA Barebones amplifier, and an LCANOM1151 antenna, packaged in the payload sled alongside the data collection electronics.</p>
+        <figure class="drone-figure">
+          <a href="images/nasa-usli/transmission-layout.webp" target="_blank" rel="noopener"><img src="images/nasa-usli/transmission-layout.webp" alt="Payload sled rendering with labeled SX1276 transceiver, VeGA Barebones amplifier, STEMnaut capsule, and LCANOM1151 antenna" width="864" height="382" loading="lazy" decoding="async"></a>
+            <figcaption>Transmission components inside the payload.</figcaption>
         </figure>
         </div></div>
         <div class="project-block"><h3 class="project-block-label">Integration &amp; design reviews</h3><div class="drone-copy">
@@ -59,7 +91,7 @@
   <footer class="footer">
     <a class="footer-callout" href="mailto:jaysuthar0721@gmail.com"><strong>Get in touch.</strong><span aria-hidden="true">↗</span></a>
     <div class="footer-inner">
-      <div class="footer-copy">Last updated September, 2026</div>
+      <div class="footer-copy">Last updated October, 2026</div>
       <div class="footer-links">
         <a href="mailto:jaysuthar0721@gmail.com">Email</a>
         <a href="https://github.com/jaysuthar0721" target="_blank" rel="noopener">GitHub</a>
