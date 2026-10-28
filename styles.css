@@ -1780,7 +1780,6 @@ body,
 /* Project detail modals inherit a matching case-study color. */
 .project-detail { --detail-accent: var(--accent-blue); }
 .project-detail[data-project-slug="composite-wing-skin"] { --detail-accent: var(--accent-coral); }
-.project-detail[data-project-slug="ansys-structural"] { --detail-accent: var(--accent-cyan); }
 .project-detail[data-project-slug="pid-simulink"] { --detail-accent: var(--accent-violet); }
 .project-detail[data-project-slug="manufacturing-clock"] { --detail-accent: var(--accent-gold); }
 .project-detail[data-project-slug="manufacturing-screwdriver"] { --detail-accent: var(--accent-coral); }
@@ -2213,7 +2212,6 @@ body,
 /* Keep each project's established accent independent of grid position. */
 .project-card[data-project="active-fin-stabilization-rocket"],
 .project-card[data-project="composite-wing-skin"] { --card-accent: var(--accent-coral); }
-.project-card[data-project="ansys-structural"] { --card-accent: var(--accent-cyan); }
 .project-card[data-project="pid-simulink"],
 .project-card[data-project="injection-molded-screwdriver"] { --card-accent: var(--accent-violet); }
 .project-card[data-project="manufacturing-clock"] { --card-accent: var(--accent-gold); }
