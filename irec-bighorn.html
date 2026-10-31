@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff">
+  <title>Bighorn: IREC 2027 Rocket | Jay Suthar</title>
+  <meta name="description" content="Chief Engineer case study for Bighorn, Colorado State University's 10,000 ft IREC 2027 competition rocket: SRAD carbon fiber airframe, airbrakes, systems engineering, and team building.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="climb.css">
+  <script src="climb.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Jay Suthar</a>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active" aria-current="page">Projects</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="https://drive.google.com/file/d/1pDSdxI6LES0vlgNJhDjFth38dQWU0KCR/view" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </nav>
+  <main id="main" class="case-study-page">
+    <a class="case-study-back" href="projects.html">← All projects</a>
+    <article class="project-detail" data-project-slug="irec-bighorn">
+      <header class="project-detail-header">
+        <h2 class="project-title" id="project-dialog-title">Bighorn: IREC 2027 Competition Rocket</h2>
+        <p class="project-detail-lede">Bighorn is Colorado State University's entry in the 10,000 ft COTS category of the 2027 International Rocket Engineering Competition in Midland, Texas. It flies a commercial motor in a student-built carbon fiber airframe, with active airbrakes to trim apogee and a 2 kg payload. The project also runs as a MECH 486A senior design capstone. I am the team's Chief Engineer.</p>
+        <p class="drone-credit"><strong>My focus:</strong> Technical scope and schedule, team building and funding, SRAD composite airframe development, laminate analysis, layup tooling, the PDR compliance audit, and the airbrake control loop.</p>
+      </header>
+      <!-- Hero image slot: replace with a Bighorn CAD render once available. -->
+      <figure class="drone-figure project-detail-hero">
+        <a href="images/carbon-airframe/layup-team.webp" target="_blank" rel="noopener"><img src="images/carbon-airframe/layup-team.webp" alt="Team members in respirators cutting and laying up carbon fiber prepreg plies at a table under work lights" width="1440" height="1920" loading="lazy" decoding="async"></a>
+        <figcaption>Laying up the prepreg test airframe that proved out Bighorn's composite process.</figcaption>
+      </figure>
+      <dl class="drone-facts">
+        <div><dt>Category</dt><dd>10,000 ft AGL, COTS solid</dd></div>
+        <div><dt>Motor</dt><dd>AeroTech M2500T, 9,671 N·s</dd></div>
+        <div><dt>Airframe</dt><dd>6.0 in SRAD prepreg carbon fiber</dd></div>
+        <div><dt>Competition</dt><dd>June 2027, Midland, TX</dd></div>
+      </dl>
+
+      <div class="project-block"><h3 class="project-block-label">Mission</h3><div class="drone-copy">
+        <p>The team must design, build, and fly a high-power rocket that reaches 10,000 ft above ground level and carries at least 2.0 kg of payload. Accuracy is scored. Under the 2027 rules, altitude points fall linearly to zero at 30% off target, so the window runs from 7,000 to 13,000 ft. Safety comes first: range officers only clear a vehicle that shows stable flight, controlled descent, and rule-compliant hardware.</p>
+        <p>The plan is a subscale flight and two full-scale flights before competition, each behind a go/no-go review.</p>
+      </div></div>
+
+      <div class="project-block"><h3 class="project-block-label">My role</h3><div class="drone-copy">
+        <p>Through June 2026, my role was mostly project management. I turned the IREC effort into an official senior design capstone by pitching it to the course instructor and department leadership with a three-slide proposal covering the project, team structure, and financial plan. I defined the technical scope, set the schedule, and recruited the team.</p>
+        <p>From July 2026, I took on the engineering work as Chief Engineer: composite airframe development, structural analysis, simulation, and requirements compliance. I still run the schedule. My rule is to lock the gate dates first and schedule backward from them.</p>
+      </div></div>
+
+      <div class="project-block"><h3 class="project-block-label">Building the team</h3><div class="drone-copy">
+        <p>Most members had no competition rocketry experience. I wrote a "START HERE" guide covering what IREC is, how it is scored, the deadlines, and the roles. I also wrote a requirements reference for each subteam that pulls the key numbers from the competition rules and the Design, Test &amp; Evaluation Guide. For onboarding, I built an interactive subsystem dependency map covering airframe, propulsion, airbrakes, avionics, recovery, and payload, which can be filtered by flight phase.</p>
+        <p>I recruited at the senior design industry showcase for 12 to 13 seats, prioritizing systems engineering, avionics, payload, composites and machining, and safety. Candidates saw the full team skills picture; I screened them privately against the open seats.</p>
+        <p>On funding, I secured a $5,000 NASA Colorado Space Grant award and built the sponsorship package. I manage the vendor and sponsor relationships, including Prodigm, Ability Composites, Composites One, BigRedBee, Ursa Major, Relativity, and Online Metals. I arranged donated Toray prepreg through a retired CSU composites professor, and brought on an outside mentor and an L3 Flyer of Record.</p>
+      </div></div>
+
+      <dl class="drone-facts">
+        <div><dt>Predicted apogee</dt><dd>11,484 ft at Midland, airbrakes off</dd></div>
+        <div><dt>Liftoff mass</dt><dd>24.12 kg against a 28 kg cap</dd></div>
+        <div><dt>Stability</dt><dd>2.19 cal at rail exit, 3.46 cal peak</dd></div>
+        <div><dt>Max speed</dt><dd>Mach 0.96, 31.9 m/s off the rail</dd></div>
+      </dl>
+
+      <div class="project-block"><h3 class="project-block-label">Vehicle</h3><div class="drone-copy">
+        <p>Bighorn is a single-stage, 116.3 in rocket on a 6.0 in carbon fiber airframe with a fiberglass Haack nose cone. Fiberglass lets the GPS signal through. The clipped-delta fins span 6.0 in and are waterjet-cut from 0.2288 in carbon fiber plate. The clipped delta won the fin trade study 141 to 123 to 110 over trapezoidal and tapered swept shapes, mostly on flutter margin, which had the highest weight.</p>
+        <p>The AeroTech M2500T gives a 10.6:1 thrust-to-weight ratio. Recovery is dual deployment: a 26 in drogue brings the rocket down at 22.3 m/s and a 96 in main lands it at 6.0 m/s. Redundant TeleMetrum and RRC3+ flight computers each have their own battery and fire their own charges. A BigRedBee GPS tracker rides in the nose.</p>
+        <p>The baseline overshoots 10,000 ft by 1,484 ft, which would score only 176.9 of 350 altitude points. Landing within 100 ft of target scores at least 338.3. Before CDR, ballast or an alternate motor will bring the nominal apogee down, and the airbrakes will correct what remains in flight.</p>
+      </div></div>
+
+      <div class="project-block"><h3 class="project-block-label">Composite airframe</h3><div class="drone-copy">
+        <p>The airframe is my main technical responsibility. The tubes are Toray 2510 unidirectional T700G prepreg, hand-laid on aluminum mandrels, vacuum-bagged, and oven-cured at 270 °F. We chose hand layup over filament winding because a six-week vendor lead time put the schedule at risk. Hand layup keeps manufacturing in-house.</p>
+        <p>I wrote the layup procedure. An outside composites reviewer left 18 comments on the first revision, and Rev 2 resolved all of them. The biggest fix was demold physics: V1 reheated the mandrel, while Rev 2 relies on controlled cooling, because aluminum shrinks away from the laminate as it cools. Rev 2 also adds cure parameters from the technical data sheet, swaps peel ply for non-perforated release film, adds a part-mounted thermocouple for hold timing, adds a pre-cure leak check (less than 2.0 inHg drop in 5 minutes), and corrects the vacuum target for Fort Collins' roughly 5,000 ft elevation. Rev 3 is in progress.</p>
+        <p>I built a MATLAB/Octave laminate tool with adjustable parameters. It applies classical laminate theory and micromechanics, so a change in fiber volume fraction carries through every result. It also checks layup rules: balance, symmetry, the 10% rule, and no more than four consecutive plies at the same angle. Its most useful output is an automated mandrel-release check. Aluminum expands more than the laminate, so the tube's hoop CTE has to stay below aluminum's (about 23.6 µε/°C) or the cured tube locks onto the mandrel. The tool sweeps the number of 90° ply pairs needed for release. A 12-ply [0/45/0/−45/90/0]s candidate came out at Ex ≈ 74.8 GPa and a hoop CTE of about 6.2 µε/°C, which releases with margin.</p>
+        <p>While checking the inputs, I found that earlier hand calculations used a 0.432 mm ply thickness taken from a different product. The correct cured thickness is 0.15 mm, about 2.9 times thinner, so the earlier sizing had been under-built by that factor. I pushed the correction through the laminate analysis and the ANSYS inputs. The process was first proven on a <a href="carbon-fiber-test-airframe.html">12 in prepreg test airframe →</a></p>
+      </div></div>
+
+      <!-- Image slot: roller stand photo or CAD. -->
+      <div class="project-block"><h3 class="project-block-label">Layup tooling</h3><div class="drone-copy">
+        <p>Hand layup on a long mandrel goes better when the mandrel can be turned and then held still. I designed 3D-printed roller stands that fit both the 4 in and 6 in mandrels, holding the centerline 6 to 7 in off the table. Each end has two rigid casters on printed bases angled about 45°, which gives 39° wheel contact angles on the 6 in mandrel and 54° on the 4 in mandrel.</p>
+        <p>The casters needed zero swivel and a wheel brake so the mandrel could be parked mid-layup. I chose a 3 in nylon McMaster-Carr caster with a foot brake. I rejected a cheaper option because its single lock engaged swivel and wheel together.</p>
+      </div></div>
+
+      <div class="project-block"><h3 class="project-block-label">PDR compliance audit</h3><div class="drone-copy">
+        <p>For the Preliminary Design Review, I owned the requirement-compliance section and the budget and timeline appendix. To write the compliance section honestly, I audited the OpenRocket model against the report and found real errors:</p>
+        <ul class="project-list">
+          <li>The motor impulse was labeled from the case name (10,240 N·s) instead of the motor's actual 9,671 N·s.</li>
+          <li>The 10,422 ft apogee on the slides came from a stale run on a different motor. I rebuilt compliance on the model's actual Midland prediction of 11,484 ft.</li>
+          <li>The "official" simulation was set to sea level at Cape Canaveral instead of Midland.</li>
+          <li>The ejection charges were sized for a 99 mm bay instead of the roughly 145 mm ID of the 6.0 in airframe, which made them about half the needed size.</li>
+          <li>Only one rail button was modeled, where the 2027 rules require two. Main deployment altitude, shock cord, and fin geometry also differed between the model and the report.</li>
+          <li>Nose ballast would have exceeded the boilerplate mass limit if counted as payload.</li>
+        </ul>
+        <p>I also moved every rule citation to the 2027 documents released October 15, 2026. That included the change that ends the minimum-stability window at motor burnout instead of drogue deployment.</p>
+      </div></div>
+
+      <div class="project-block"><h3 class="project-block-label">Airbrakes</h3><div class="drone-copy">
+        <p>The airbrakes use a linear-track mechanism in 6061 aluminum. They stay in the design only if they pass five gates: control authority, net benefit, stability, safety, and mass and schedule. They sit between the CG and CP, so full deployment moves the CP forward by only about 0.04 calibers. That is small next to the roughly 0.9 caliber the CG shifts during burn.</p>
+        <p>The existing RocketPy controller had a bug: it computed a deployment level and then overwrote it with full deployment on every call. I rewrote it as a PI loop on predicted apogee error. It projects apogee kinematically (v<sub>z</sub>² / 2|a<sub>z</sub>|), activates at motor burnout or 2,000 m AGL, and has an anti-windup integral clamp and a servo slew-rate limit. The current gains are placeholders until Monte Carlo tuning across motor impulse, mass, drag coefficient, and wind. To build the drag model, I ran SolidWorks Flow Simulation sweeps of drag coefficient against Mach number on the Bighorn geometry.</p>
+        <p>The flight computer is a Teensy 4.1 with an IMU and a BMP390 barometer. Past teams on slower microcontrollers got too few control updates during coast; one managed only six in 20 seconds. Full-scale flight 1 flies with the airbrakes locked to get a clean drag and apogee baseline before the controller corrects anything.</p>
+      </div></div>
+
+      <div class="project-block"><h3 class="project-block-label">Systems engineering</h3><div class="drone-copy">
+        <p>The PDR baseline traces 12 stakeholder needs to 112 requirements and 41 functions. Each requirement links to a subsystem, an interface, any related hazards, and a verification method. Requirements, recovery, payload, airbrakes, and safety each have a teammate who owns that section. My job is making sure those sections describe the same vehicle.</p>
+      </div></div>
+
+      <div class="project-block"><h3 class="project-block-label">Team</h3><div class="drone-copy">
+        <p>Ian Hopkins (Systems Engineer), Mark Davidson (Safety and Test), Pablo Herrera-Ceja (Airbrakes), Ben McCarragher (Payload), Michael Tan (Recovery), Ryan Burns (Recovery, Airframes, Airbrakes), Jack Letzelter (Airframe Structures), and Jack Smith (Manufacturing). Faculty advisor Kari Cowden leads structural validation in ANSYS Composite PrepPost; Dr. Brian Johns teaches the capstone.</p>
+      </div></div>
+
+      <div class="project-block"><h3 class="project-block-label">Status &amp; next steps</h3><div class="drone-copy">
+        <p>As of October 2026, PDR is complete and the team is in detailed design and manufacturing. CDR presentations run from November 30 to December 11.</p>
+        <ul class="project-list">
+          <li><strong>Nov 2026:</strong> composite coupon cure, shock cord pull test, recovery hardware proof load, airbrakes bench test.</li>
+          <li><strong>Dec 12, 2026:</strong> subscale launch to about 5,500 ft on a Cesaroni K570 to check stability, recovery, and apogee.</li>
+          <li><strong>Jan 2027:</strong> first full-scale airframe layup.</li>
+          <li><strong>Mar 13, 2027:</strong> full-scale flight 1 with airbrakes locked.</li>
+          <li><strong>May 8, 2027:</strong> full-scale flight 2 in competition configuration with airbrakes active.</li>
+          <li><strong>June 2027:</strong> IREC competition launch.</li>
+        </ul>
+      </div></div>
+    </article>
+  </main>
+  <footer class="footer">
+    <a class="footer-callout" href="mailto:jaysuthar0721@gmail.com"><strong>Get in touch.</strong><span aria-hidden="true">↗</span></a>
+    <div class="footer-inner">
+      <div class="footer-copy">Last updated October, 2026</div>
+      <div class="footer-links">
+        <a href="mailto:jaysuthar0721@gmail.com">Email</a>
+        <a href="https://github.com/jaysuthar0721" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/jay-suthar-74205b235/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://drive.google.com/file/d/1pDSdxI6LES0vlgNJhDjFth38dQWU0KCR/view" target="_blank" rel="noopener" class="accent">Resume</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
