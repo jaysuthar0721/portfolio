@@ -72,12 +72,12 @@
       </dl>
 
       <div class="project-block"><h3 class="project-block-label">Vehicle</h3><div class="drone-copy">
-        <p>Bighorn is a single-stage, 116.3 in (2.95 m) rocket on a 6.0 in carbon fiber airframe laid up on aluminum mandrels. The nose cone is fiberglass laid up in a mold, because fiberglass lets the GPS signal through. The clipped-delta fins span 6.0 in and are waterjet-cut from 0.2288 in carbon fiber plate by an outside shop, which frees our own fabrication time for the airframe and airbrakes. The clipped delta won the fin trade study 141 to 123 to 110 over trapezoidal and tapered swept shapes, mostly on flutter margin, which had the highest weight.</p>
+        <p>Bighorn is a single-stage, 116.3 in (2.95 m) rocket on a 6.0 in carbon fiber airframe laid up on aluminum mandrels. The nose cone is fiberglass laid up in a mold, because fiberglass lets the GPS signal through. The clipped-delta fins span 6.0 in and are waterjet-cut from 0.2288 in carbon fiber plate by an outside shop, which frees our own fabrication time for the airframe and airbrakes. The clipped delta beat the next planform 97 to 87 in a weighted trade study, mostly on flutter margin.</p>
         <figure class="drone-figure">
           <a href="images/irec/vehicle-profile.webp" target="_blank" rel="noopener"><img src="images/irec/vehicle-profile.webp" alt="OpenRocket side profile of Bighorn showing the nose cone, body sections, internal components, and clipped-delta fins" width="1600" height="283" loading="lazy" decoding="async"></a>
           <figcaption>OpenRocket profile of the full-scale vehicle at the PDR baseline.</figcaption>
         </figure>
-        <p>The AeroTech M2500T pulls a peak of 17.02 g. The simulated apogee of 10,907 ft overshoots the target by 907 ft, which would score 244.2 of 350 altitude points. Landing within 100 ft of target scores at least 338.3. Before CDR, ballast or an alternate motor will bring the nominal apogee down, and the airbrakes will correct what remains in flight.</p>
+        <p>The AeroTech M2500T was the most common motor among past IREC entries, 26 of 56 in a survey of earlier technical reports, and it pulls a peak of 17.02 g on Bighorn. The submitted simulation predicts 10,907 ft in a standard atmosphere. Midland's thinner June air adds roughly 577 ft, so the baseline overshoots in every expected condition. That is deliberate: airbrakes can only remove altitude. Before CDR, ballast or the second-ranked motor, a Cesaroni M3400-P, will bring the nominal apogee closer, and the airbrakes will correct what remains. Landing within 100 ft of target scores at least 338.3 of 350 altitude points.</p>
       </div></div>
 
       <div class="project-block"><h3 class="project-block-label">Composite airframe</h3><div class="drone-copy">
@@ -138,8 +138,23 @@
         <p>The cycle runs from before launch through descent. Temperature and pressure sensors sit around the loop, most importantly at the compressor inlet and outlet and on either side of the expansion device, and an onboard computer logs them with altitude and acceleration. After recovery, those measurements give the refrigerant state and the cycle's coefficient of performance in each flight phase. Comparing that against ground testing shows how altitude, ambient pressure, temperature, acceleration, and vibration affect a small thermal management system on a flight vehicle. The payload is in concept design now, with a bench test planned for November.</p>
       </div></div>
 
+      <div class="project-block"><h3 class="project-block-label">Trade studies</h3><div class="drone-copy">
+        <p>Every subsystem choice came from a weighted trade study of three to seven alternatives and has a decision record: what was chosen, what it beat, how far the evidence can be trusted, and what would reopen it. The architecture itself was chosen first. The committed baseline is what every IREC entry needs, and the airbrakes and payload experiment are carried as gated options.</p>
+        <ul class="project-list">
+          <li><strong>Airframe:</strong> in-house prepreg carbon fiber over 7 materials and methods, 121 to 113.</li>
+          <li><strong>Nose cone:</strong> Haack series over 6 shapes, 92 to 87, on drag.</li>
+          <li><strong>Fins:</strong> clipped delta over 3 planforms, 97 to 87, on flutter margin, with a double-wedge cross-section.</li>
+          <li><strong>Parachutes:</strong> IRIS Ultralight over 3 types, 92 to 84.</li>
+          <li><strong>Avionics bay:</strong> hybrid panel assembly over 3 layouts, 98 to 97, decided on integration fit.</li>
+          <li><strong>Airbrakes:</strong> linear track over 4 concepts, including flying without airbrakes, 99 to 89.</li>
+          <li><strong>Payload experiment:</strong> thermodynamic cycle over 5 experiments, 134 to 132, decided on scientific value.</li>
+        </ul>
+        <p>Close margins are labeled low confidence and given a specific result that would reopen them, such as a failed flutter calculation or a trial print that does not fit the bay.</p>
+      </div></div>
+
       <div class="project-block"><h3 class="project-block-label">Systems engineering</h3><div class="drone-copy">
-        <p>I set the methods every decision runs through. The PDR baseline traces 12 stakeholder needs to 112 requirements and 41 functions. Each requirement links to a subsystem, an interface, any related hazards, and a verification method by test, analysis, or inspection. Trades are settled with weighted decision matrices, and each flight sits behind a go/no-go review.</p>
+        <p>I set the methods every decision runs through. Twelve stakeholders, from range safety officers who can refuse a launch to the shop that controls fabrication access, trace to 112 requirements and 41 second-level functions. Each requirement links to a subsystem, an interface, any related hazards, and a verification method: 34 by test, 36 by analysis, 39 by inspection, and 3 by demonstration. Every test requirement belongs to a test group, and each flight sits behind a go/no-go review.</p>
+        <p>Risk is tracked in an FMEA of 25 hazards scored by impact and probability, including hazards that exist only because of the airbrakes and the payload experiment. Each safety-critical feature names the hazards it mitigates. Before CDR, 11 requirements with open values (mass, dimensions, wind limit, payload volume, airbrake response time) have to close.</p>
         <figure class="drone-figure">
           <a href="images/irec/interface-diagram.webp" target="_blank" rel="noopener"><img src="images/irec/interface-diagram.webp" alt="Interface diagram of the carbon fiber airframe connecting payload, recovery, avionics, airbrakes, and motor, with mechanical, electrical, and data links and safety-critical functions highlighted" width="1153" height="807" loading="lazy" decoding="async"></a>
           <figcaption>Subsystem interfaces at PDR. Highlighted blocks carry safety-critical functions.</figcaption>
