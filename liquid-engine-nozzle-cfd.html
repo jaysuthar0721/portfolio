@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff">
+  <title>Liquid Rocket Engine Nozzle CFD | Jay Suthar</title>
+  <meta name="description" content="Ansys Fluent mesh and CFD of the prototype nozzle for Ram Rocketry's student liquid rocket engine, with Mach and static pressure contours across three runs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="climb.css">
+  <script src="climb.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Jay Suthar</a>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active" aria-current="page">Projects</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="https://drive.google.com/file/d/1pDSdxI6LES0vlgNJhDjFth38dQWU0KCR/view" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </nav>
+  <main id="main" class="case-study-page">
+    <a class="case-study-back" href="projects.html">← All projects</a>
+    <article class="project-detail" data-project-slug="liquid-engine-nozzle-cfd">
+      <header class="project-detail-header">
+        <h2 class="project-title" id="project-dialog-title">Liquid Rocket Engine Nozzle CFD</h2>
+        <p class="project-detail-lede">CFD of the prototype nozzle for Ram Rocketry's student liquid rocket engine, from an initial prototypes and simulations document I co-wrote with Ian Leary. I launched the club's liquid engine program, which targets IREC 2028.</p>
+        <p class="drone-credit"><strong>My focus:</strong> Building, refining, and converging the Ansys Fluent mesh for the prototype nozzle, and running the contour plots shown here.</p>
+      </header>
+      <figure class="drone-figure project-detail-hero">
+        <a href="images/liquid-engine/mach-final.webp" target="_blank" rel="noopener"><img src="images/liquid-engine/mach-final.webp" alt="Ansys Fluent Mach contour of the nozzle and plume peaking at Mach 3.23, above the pressure inlet and pressure outlet settings dialogs" width="975" height="577" loading="lazy" decoding="async"></a>
+        <figcaption>Final Mach contour of the nozzle geometry, with dummy inlet and outlet pressure inputs.</figcaption>
+      </figure>
+      <dl class="drone-facts">
+        <div><dt>Tool</dt><dd>Ansys Fluent</dd></div>
+        <div><dt>Runs shown</dt><dd>V1, V2, final</dd></div>
+        <div><dt>Peak Mach, final run</dt><dd>3.23</dd></div>
+        <div><dt>Input pressures, final run</dt><dd>Dummy values</dd></div>
+      </dl>
+      <div class="project-block"><h3 class="project-block-label">Mesh</h3><div class="drone-copy"><p>I used structured quadrilateral cells across the convergent section, the divergent section, and the domain beyond the exit. Cells are finest at the throat and get coarser moving away from it.</p></div></div>
+      <figure class="drone-figure">
+        <a href="images/liquid-engine/mesh.webp" target="_blank" rel="noopener"><img src="images/liquid-engine/mesh.webp" alt="Ansys mesh view of the nozzle wall, with quadrilateral cells finest at the throat and coarser in the domain beyond the exit" width="2048" height="942" loading="lazy" decoding="async"></a>
+        <figcaption>Ansys mesh view showing the nozzle's convergent, divergent, and domain sections.</figcaption>
+      </figure>
+      <div class="project-block"><h3 class="project-block-label">Iterations</h3><div class="drone-copy"><p>V1 ran at an inlet gauge total pressure of 650,000 Pa, an initial gauge pressure of 600,000 Pa, and an outlet gauge pressure of 85,000 Pa. It peaked at Mach 2.65, and the jet broke up partway down the domain. V2 peaked at Mach 2.21, and the jet stayed more coherent. The figure does not show the V2 boundary conditions.</p></div></div>
+      <div class="drone-gallery">
+        <figure class="drone-figure">
+          <a href="images/liquid-engine/mach-v1.webp" target="_blank" rel="noopener"><img src="images/liquid-engine/mach-v1.webp" alt="Nozzle V1 Mach contour peaking at Mach 2.65, with the jet breaking up downstream, beside the Fluent inlet and outlet pressure settings" width="620" height="553" loading="lazy" decoding="async"></a>
+          <figcaption>Nozzle V1 Mach contour and boundary conditions.</figcaption>
+        </figure>
+        <figure class="drone-figure">
+          <a href="images/liquid-engine/mach-v2.webp" target="_blank" rel="noopener"><img src="images/liquid-engine/mach-v2.webp" alt="Nozzle V2 Mach contour peaking at Mach 2.21, with a jet that stays coherent down the domain" width="209" height="481" loading="lazy" decoding="async"></a>
+          <figcaption>Nozzle V2 Mach contour.</figcaption>
+        </figure>
+      </div>
+      <div class="project-block"><h3 class="project-block-label">Final run</h3><div class="drone-copy"><p>The final run used an inlet gauge total pressure of 550,000 Pa, an initial gauge pressure of 500,000 Pa, and an outlet gauge pressure of 85,000 Pa. It peaked at Mach 3.23, with static pressure from about 551,000 Pa down to about 10,600 Pa. The plume shows a repeating diamond pattern downstream of the exit, which breaks down near the outlet.</p></div></div>
+      <figure class="drone-figure">
+        <a href="images/liquid-engine/pressure-final.webp" target="_blank" rel="noopener"><img src="images/liquid-engine/pressure-final.webp" alt="Ansys Fluent static pressure contour of the nozzle and plume, showing a repeating diamond pattern downstream of the exit, above the pressure settings dialogs" width="975" height="572" loading="lazy" decoding="async"></a>
+        <figcaption>Static pressure contour from the final run.</figcaption>
+      </figure>
+      <div class="project-block"><h3 class="project-block-label">Limits</h3><div class="drone-copy"><p>The final-run pressures are dummy inputs, not engine operating conditions, so these plots are not engine performance predictions. The solver console in the final-run screenshots reports reversed flow on 180 faces, 47.8% of the area. I have not compared these results with test data.</p></div></div>
+    </article>
+  </main>
+  <footer class="footer">
+    <a class="footer-callout" href="mailto:jaysuthar0721@gmail.com"><strong>Get in touch.</strong><span aria-hidden="true">↗</span></a>
+    <div class="footer-inner">
+      <div class="footer-copy">Last updated November, 2026</div>
+      <div class="footer-links">
+        <a href="mailto:jaysuthar0721@gmail.com">Email</a>
+        <a href="https://github.com/jaysuthar0721" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/jay-suthar-74205b235/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://drive.google.com/file/d/1pDSdxI6LES0vlgNJhDjFth38dQWU0KCR/view" target="_blank" rel="noopener" class="accent">Resume</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
