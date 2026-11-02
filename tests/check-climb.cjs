@@ -36,10 +36,10 @@ let browser;
         await page.evaluate(theme => document.documentElement.dataset.theme = theme, theme);
         for (const progress of [0,.5,1]) {
           await page.evaluate(p => window.scrollTo(0, (document.documentElement.scrollHeight - innerHeight) * p), progress);
-          await page.waitForFunction(p => Math.abs(parseInt(document.querySelector('.climb-readout').textContent.slice(4), 10) - Math.round(p * 400)) <= 1, progress);
+          await page.waitForFunction(p => Math.abs(parseInt(document.querySelector('.climb-readout').textContent.slice(4), 10) - Math.round(p * 100)) <= 1, progress);
           const state = await page.evaluate(() => ({
             alt:document.querySelector('.climb-readout').textContent,
-            flow:+getComputedStyle(document.querySelector('.climb-flow')).opacity,
+            flow:document.querySelectorAll('.climb-flow').length,
             orbit:+getComputedStyle(document.querySelector('.climb-orbit')).opacity,
             overflow:document.documentElement.scrollWidth > innerWidth,
             pointer:getComputedStyle(document.querySelector('.climb')).pointerEvents,
@@ -52,8 +52,9 @@ let browser;
           assert.equal(state.overflow,false,`${route}/${width} horizontal overflow`);
           assert.equal(state.pointer,'none'); assert.equal(state.hidden,'true'); assert.equal(state.count,1);
           assert.equal(state.animations,0); assert.ok(state.readout < state.nav);
-          if (progress === 0) {assert.equal(state.alt,'ALT 000 KM'); assert.equal(state.orbit,0);}
-          if (progress === 1) {assert.equal(state.alt,'ALT 400 KM'); assert.equal(state.flow,0); assert.equal(state.orbit,1);}
+          assert.equal(state.flow,0); assert.equal(state.orbit,1);
+          if (progress === 0) assert.equal(state.alt,'ALT 000 KM');
+          if (progress === 1) assert.equal(state.alt,'ALT 100 KM');
           if (width !== 320 && route === 'index') await page.screenshot({path:path.join(output,`${route}-${width}-${theme}-${progress}.png`)});
           results.push({route,width,theme,progress,...state});
         }
@@ -62,11 +63,11 @@ let browser;
       await page.waitForTimeout(300);
       assert.equal(await page.evaluate(() => window.__frames),frames,'No idle frames');
       await page.emulateMedia({reducedMotion:'reduce'});
-      await page.waitForFunction(() => document.querySelector('.climb').style.getPropertyValue('--orbit') === '0.0000');
-      const before = await page.locator('.climb').getAttribute('style');
-      await page.evaluate(() => window.scrollTo(0,0));
+      await page.waitForFunction(() => document.querySelector('.climb-readout').textContent === 'ALT 000 KM');
+      const before = await page.locator('[data-climb-craft]').getAttribute('transform');
+      await page.evaluate(() => window.scrollTo(0,500));
       await page.waitForTimeout(100);
-      assert.equal(await page.locator('.climb').getAttribute('style'),before,'Reduced motion remains static');
+      assert.equal(await page.locator('[data-climb-craft]').getAttribute('transform'),before,'Reduced motion remains static');
       assert.equal(await page.locator('.climb-readout').isVisible(),false);
       await page.emulateMedia({reducedMotion:'no-preference'});
       if (route === 'projects') {

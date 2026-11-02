@@ -5,7 +5,6 @@
 
   const root = document.documentElement;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const compact = matchMedia('(max-width: 700px)');
   root.classList.add('has-climb');
   const layer = document.createElement('div');
   layer.className = 'climb';
@@ -16,23 +15,11 @@
   readout.setAttribute('aria-hidden', 'true');
   readout.textContent = 'ALT 000 KM';
 
-  const paths = [90, 150, 205, 255, 300, 340, 440, 490, 545, 605, 670].map((y, i) => {
-    const bend = [-2, -5, -9, -14, -20, -26, 18, 13, 9, 5, 2][i];
-    const d = `M -40 ${y} C 450 ${y} 690 ${y + bend} 860 ${y + bend} C 1030 ${y + bend} 1130 ${y + 8} 1320 ${y + 8}`;
-    const detail = i % 2 ? ' climb-detail' : '';
-    return `<g class="${detail}"><path class="climb-stream" d="${d}"/><path class="climb-particle${i === 4 || i === 5 ? ' climb-particle--fast' : ''}" d="${d}"/></g>`;
-  }).join('');
   // Deterministic, sparse stars: no twinkling, randomness, filters, or timers.
   const stars = Array.from({ length: 32 }, (_, i) =>
     `<circle class="${i % 3 ? 'climb-detail' : ''}" cx="${(i * 193 + 47) % 1280}" cy="${(i * 127 + 39) % 720}" r="${i % 5 === 0 ? 1.3 : .7}"/>`
   ).join('');
-  layer.innerHTML = `<div class="climb-sky"></div>
-    <svg class="climb-flow" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" focusable="false">
-      ${paths}
-      <path class="climb-guide" d="M 660 404 H 1100"/>
-      <path class="climb-airfoil" d="M 700 400 C 720 355 830 350 1020 408 C 860 420 740 420 700 400 Z"/>
-    </svg>
-    <svg class="climb-orbit" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" focusable="false">
+  layer.innerHTML = `<svg class="climb-orbit" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" focusable="false">
       <g class="climb-stars">${stars}</g>
       <g class="climb-horizon">
         <circle cx="1050" cy="810" r="370"/>
@@ -56,7 +43,6 @@
   let lastAltitude = -1;
 
   const clamp = value => Math.max(0, Math.min(1, value));
-  const smooth = value => value * value * (3 - 2 * value);
 
   function render() {
     frame = 0;
@@ -68,14 +54,9 @@
       needsMeasure = false;
     }
     const progress = reduced.matches ? 0 : clamp(window.scrollY / (distance || 1));
-    const orbit = smooth(clamp((progress - .18) / .62));
-    layer.style.setProperty('--orbit', orbit.toFixed(4));
-    layer.style.setProperty('--flow', (1 - orbit).toFixed(4));
-    layer.style.setProperty('--descent', `${(orbit * (compact.matches ? 18 : 48)).toFixed(2)}px`);
-    layer.style.setProperty('--dash', (-progress * 240).toFixed(2));
     const angle = (-145 + progress * 150) * Math.PI / 180;
     craft.setAttribute('transform', `translate(${(990 + 305 * Math.cos(angle)).toFixed(2)} ${(365 + 178 * Math.sin(angle)).toFixed(2)}) rotate(${(Math.atan2(178 * Math.cos(angle), -305 * Math.sin(angle)) * 180 / Math.PI).toFixed(2)})`);
-    const altitude = Math.round(progress * 400);
+    const altitude = Math.round(progress * 100);
     if (altitude !== lastAltitude) {
       readout.textContent = `ALT ${String(altitude).padStart(3, '0')} KM`;
       lastAltitude = altitude;
@@ -94,7 +75,6 @@
     else measure();
   });
   reduced.addEventListener('change', measure);
-  compact.addEventListener('change', measure);
   if ('ResizeObserver' in window) {
     const observer = new ResizeObserver(measure);
     observer.observe(document.body);

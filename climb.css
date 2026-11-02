@@ -10,10 +10,6 @@
 /* Reserve a slim telemetry row inside the sticky header, away from page copy. */
 html.has-climb .nav { padding-bottom: calc(.8rem + 1.25rem); }
 .climb {
-  --orbit: 0;
-  --flow: 1;
-  --descent: 0px;
-  --dash: 0;
   position: fixed;
   inset: 0;
   z-index: 0;
@@ -21,20 +17,12 @@ html.has-climb .nav { padding-bottom: calc(.8rem + 1.25rem); }
   pointer-events: none;
   contain: layout paint style;
   color: var(--accent-green);
-  background: var(--bg);
+  background: var(--surface-soft);
 }
-.climb-sky, .climb svg, .climb-veil { position: absolute; inset: 0; width: 100%; height: 100%; }
-.climb-sky { background: var(--surface-soft); opacity: var(--orbit); }
-:root[data-theme="dark"] .climb { background: var(--surface-soft); }
-:root[data-theme="dark"] .climb-sky { background: var(--bg); }
+.climb svg, .climb-veil { position: absolute; inset: 0; width: 100%; height: 100%; }
+:root[data-theme="dark"] .climb { background: var(--bg); }
 .climb svg { fill: none; stroke: currentColor; stroke-width: 1; }
 .climb svg * { vector-effect: non-scaling-stroke; }
-.climb-flow { opacity: var(--flow); transform: translateY(var(--descent)); }
-.climb-orbit { opacity: var(--orbit); }
-.climb-stream { opacity: .16; }
-.climb-particle { stroke-width: 1.5; stroke-dasharray: 2 46; stroke-linecap: round; stroke-dashoffset: var(--dash); opacity: .32; }
-.climb-particle--fast { stroke-dashoffset: calc(var(--dash) * 1.6); }
-.climb-airfoil { fill: var(--surface-soft); stroke-width: 1.2; opacity: .5; }
 .climb-guide { stroke-dasharray: 3 9; opacity: .15; }
 .climb-ring { opacity: .27; }
 .climb-horizon { opacity: .13; }
@@ -57,18 +45,11 @@ html.has-climb .nav { padding-bottom: calc(.8rem + 1.25rem); }
 }
 @media (max-width: 700px) {
   .climb-detail { display: none; }
-  .climb-stream { opacity: .12; }
-  .climb-particle { opacity: .22; }
   .climb-ring { opacity: .2; }
-  .climb-airfoil { opacity: .25; }
   .climb-readout { font-size: .5625rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   html.has-climb .nav { padding-bottom: .8rem; }
-  .climb-flow { transform: none; opacity: .65; }
-  .climb-orbit { opacity: .25; }
-  .climb-sky { opacity: 0; }
-  .climb-particle { display: none; }
   .climb-readout { display: none; }
 }
 @media print, (forced-colors: active) {

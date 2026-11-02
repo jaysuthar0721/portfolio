@@ -20,7 +20,7 @@ Engineering notebook meets aerospace flight documentation.
 
 The scroll-driven climb-to-orbit layer is the signature motion system.
 
-- Atmospheric flow transitions into an orbital diagram as scroll progress increases.
+- An orbital diagram stays visible through the full scroll, with the satellite position following scroll progress.
 - Motion is driven by scroll and uses transform or opacity where practical.
 - Reduced-motion preferences are respected.
 - The mobile header does not reserve space for the altitude readout.

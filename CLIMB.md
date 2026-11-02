@@ -1,27 +1,26 @@
 # Climb to orbit background
 
-`climb.js` mounts two fixed, decorative SVG layers on the four content pages.
+`climb.js` mounts one fixed, decorative SVG layer on the content pages.
 `climb.css` uses the existing light/dark theme variables; the resume and
 manufacturing redirect pages intentionally remain redirects.
 
 - Scroll progress is the document scroll offset divided by its scrollable height.
-  The altitude indicator maps it to an illustrative 0–400 km.
-- Between 18% and 80% progress, a smoothstep crossfade replaces airflow with an
-  orbital diagram. Streamline dash offsets and the satellite position also follow
-  scroll. There are no time-based animations or idle animation loops.
+  The altitude indicator maps it to an illustrative 0–100 km.
+- The orbital diagram stays visible from the top of the page to the bottom. The
+  satellite position follows scroll. There are no time-based animations or idle
+  animation loops.
 - A passive scroll listener schedules at most one pending animation frame.
   Layout measurements are cached and refreshed on resize, content-size changes,
   font/image loading, and page restoration. Hidden tabs do not schedule frames.
-- Mobile hides alternate flow lines, secondary orbital detail, and most stars;
-  translation is reduced from 48 to 18 pixels. SVG uses a 1280×720 viewBox with
-  `xMidYMid slice`, so the composition crops without creating horizontal overflow.
+- Mobile hides secondary orbital detail and most stars. SVG uses a 1280×720
+  viewBox with `xMidYMid slice`, so the composition crops without creating horizontal overflow.
 - The readout occupies a reserved row in the sticky header, outside the reading
   area. It is illustrative decoration, not real telemetry or a live region.
-- Both SVGs and the readout are hidden from assistive technology and ignore
+- The SVG and the readout are hidden from assistive technology and ignore
   pointer input. Existing navigation, content, theme control, and dialogs retain
   their behavior.
-- `prefers-reduced-motion: reduce` displays a static blended composition, removes
-  flow particles and altitude updates, and hides the readout. This preference can
+- `prefers-reduced-motion: reduce` holds the satellite still, stops altitude
+  updates, and hides the readout. This preference can
   change while the page is open. Print and forced-colors hide the decoration.
 - If JavaScript is unavailable, the original static portfolio remains visible.
 
@@ -47,7 +46,7 @@ overflow, or idle animation frames. Reduced motion and project dialogs passed
 on all viewports. Physical-device and Safari/Firefox testing remain separate.
 
 Check all four content pages at desktop, 390 px, and 320 px widths in both themes:
-top (ALT 000), midpoint (approximately ALT 200), and bottom (ALT 400). Resize,
+top (ALT 000), midpoint (approximately ALT 050), and bottom (ALT 100). Resize,
 change motion preference while scrolled, and navigate back to a scrolled page.
 Ensure the header and readout do not overlap, no horizontal overflow appears,
 and the background never captures clicks or keyboard focus. Open a project
