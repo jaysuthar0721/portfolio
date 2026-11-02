@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff">
+  <title>Tensile Testing of 3D-Printing Polymers | Jay Suthar</title>
+  <meta name="description" content="An undergraduate research poster using tensile tests of PLA, ABS, and TPU filament to predict how 3D-printing polymers would compare in natural degradation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="climb.css">
+  <script src="climb.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Jay Suthar</a>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active" aria-current="page">Projects</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="https://drive.google.com/file/d/1pDSdxI6LES0vlgNJhDjFth38dQWU0KCR/view" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </nav>
+  <main id="main" class="case-study-page">
+    <a class="case-study-back" href="projects.html">← All projects</a>
+    <article class="project-detail" data-project-slug="polymer-tensile-testing">
+      <header class="project-detail-header">
+        <h2 class="project-title" id="project-dialog-title">Tensile Testing of 3D-Printing Polymers</h2>
+        <p class="project-detail-lede">An undergraduate research poster I solo-authored through CSU’s Office for Undergraduate Research and Artistry (OURA), titled “Extrapolating the biodegradability of 3D-Printing polymers based on their tensile strength”.</p>
+        <p class="drone-credit"><strong>My focus:</strong> I used tensile data from PLA, TPU and ABS to predict which filament would last longest before observable natural degradation.</p>
+      </header>
+      <figure class="drone-figure project-detail-hero">
+        <a href="images/oura/pla-extensometer.webp" target="_blank" rel="noopener"><img src="images/oura/pla-extensometer.webp" alt="Black PLA filament held in the grips of a tensile tester with a green extensometer clipped to it" width="731" height="975" loading="lazy" decoding="async"></a>
+        <figcaption>PLA filament on the tensile tester, with an extensometer attached.</figcaption>
+      </figure>
+      <dl class="drone-facts">
+        <div><dt>Test</dt><dd>Tensile, three filaments</dd></div>
+        <div><dt>PLA Young’s modulus</dt><dd>92.26 N/mm²</dd></div>
+        <div><dt>ABS Young’s modulus</dt><dd>69.69 N/mm²</dd></div>
+        <div><dt>TPU Young’s modulus</dt><dd>7.825 N/mm²</dd></div>
+      </dl>
+      <div class="project-block"><h3 class="project-block-label">Question</h3><div class="drone-copy"><p>3D-printing filaments are described as biodegradable, but only in industrial composting and anaerobic digestion, not in natural environments or everyday use, adding to the plastic footprint. I aimed to predict which filament would last longest before any observable natural degradation using its tensile properties, and to test whether tensile strength could be correlated with biodegradability.</p></div></div>
+      <div class="project-block"><h3 class="project-block-label">Test</h3><div class="drone-copy"><p>I ran PLA, ABS and TPU filament on a tensile tester in the CSU Materials Lab, using a skill I learned in MECH 231. I tested PLA with an extensometer attached, produced a stress-strain curve for each filament, and calculated Young’s modulus for each.</p></div></div>
+      <figure class="drone-figure">
+        <a href="images/oura/tpu-test-frame.webp" target="_blank" rel="noopener"><img src="images/oura/tpu-test-frame.webp" alt="Full tensile test frame with a force gauge and readout above TPU filament clamped in the lower grip" width="731" height="975" loading="lazy" decoding="async"></a>
+        <figcaption>TPU filament on the tensile tester.</figcaption>
+      </figure>
+      <div class="project-block"><h3 class="project-block-label">Results</h3><div class="drone-copy"><p>Young’s modulus was 92.26 N/mm² for PLA, 69.69 N/mm² for ABS, and 7.825 N/mm² for TPU; PLA had the highest value. TPU endured linearly increasing force for about 180 seconds, until the clamps broke the ends of the filament and ended the test.</p></div></div>
+      <div class="drone-gallery">
+        <figure class="drone-figure">
+          <a href="images/oura/pla-curve.webp" target="_blank" rel="noopener"><img src="images/oura/pla-curve.webp" alt="Stress-strain plot for PLA, with stress peaking near 12 N/mm² and the last points dropping to zero near a strain of 0.5" width="752" height="452" loading="lazy" decoding="async"></a>
+          <figcaption>Stress-strain curve for PLA.</figcaption>
+        </figure>
+        <figure class="drone-figure">
+          <a href="images/oura/abs-curve.webp" target="_blank" rel="noopener"><img src="images/oura/abs-curve.webp" alt="Stress-strain plot for ABS, with stress peaking near 9 N/mm² and the last points dropping to zero near a strain of 0.23" width="754" height="457" loading="lazy" decoding="async"></a>
+          <figcaption>Stress-strain curve for ABS.</figcaption>
+        </figure>
+      </div>
+      <figure class="drone-figure">
+        <a href="images/oura/tpu-curve.webp" target="_blank" rel="noopener"><img src="images/oura/tpu-curve.webp" alt="Stress-strain plot for TPU, with stress rising to about 7 N/mm² at a strain near 8 before dropping to zero" width="748" height="451" loading="lazy" decoding="async"></a>
+        <figcaption>Stress-strain curve for TPU. Its strain axis runs to about 8, compared with under 0.6 for PLA and ABS.</figcaption>
+      </figure>
+      <div class="project-block"><h3 class="project-block-label">Conclusion</h3><div class="drone-copy"><p>My prediction from the tensile data is that TPU needs less harsh conditions to degrade than PLA, which conflicts with the sources I referenced. This makes the result useful for identifying exceptions to a simple linear positive correlation between tensile strength and biodegradability, and points to chemical composition, temperature, and moisture level in the filament as other factors.</p></div></div>
+      <div class="project-block"><h3 class="project-block-label">Limits</h3><div class="drone-copy"><p>I did not measure degradation itself; the biodegradability result is a prediction from tensile data only. Moisture level, filament length, and ambient temperature were uncontrolled variables. The numbers come from one setup, so they are best read as a comparison between these three filaments, not as material properties.</p></div></div>
+      <div class="project-block"><h3 class="project-block-label">Next</h3><div class="drone-copy"><p>A larger scope would test decomposition of these polymers directly and overlay the results onto their tensile strength. An open question is how to find a chemically efficient way to speed up decomposition of 3D-printing filaments.</p><p><a href="documents/oura-polymer-tensile-poster.pdf" target="_blank" rel="noopener">View the original research poster (PDF, 0.6 MB) →</a></p></div></div>
+    </article>
+  </main>
+  <footer class="footer">
+    <a class="footer-callout" href="mailto:jaysuthar0721@gmail.com"><strong>Get in touch.</strong><span aria-hidden="true">↗</span></a>
+    <div class="footer-inner">
+      <div class="footer-copy">Last updated November, 2026</div>
+      <div class="footer-links">
+        <a href="mailto:jaysuthar0721@gmail.com">Email</a>
+        <a href="https://github.com/jaysuthar0721" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/jay-suthar-74205b235/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://drive.google.com/file/d/1pDSdxI6LES0vlgNJhDjFth38dQWU0KCR/view" target="_blank" rel="noopener" class="accent">Resume</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
