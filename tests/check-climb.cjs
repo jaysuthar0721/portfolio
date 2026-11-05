@@ -71,10 +71,9 @@ let browser;
       assert.equal(await page.locator('.climb-readout').isVisible(),false);
       await page.emulateMedia({reducedMotion:'no-preference'});
       if (route === 'projects') {
-        await page.locator('[data-project]').first().click();
-        assert.equal(await page.locator('#project-dialog').isVisible(),true);
-        await page.keyboard.press('Escape');
-        assert.equal(await page.locator('#project-dialog').isVisible(),false);
+        // Cards are plain links to standalone pages; project content needs no script.
+        const href = await page.locator('.project-card').first().getAttribute('href');
+        assert.match(href,/\.html$/);
       }
     }
     assert.deepEqual(errors,[]);
@@ -85,5 +84,5 @@ let browser;
   assert.ok(await page.locator('h1').isVisible());
   await browser.close();
   fs.writeFileSync(path.join(output,'results.json'),JSON.stringify(results,null,2));
-  console.log(`PASS: ${results.length} route/viewport/theme/scroll combinations; reduced motion, idle frames, dialogs, no-JS, no errors.`);
+  console.log(`PASS: ${results.length} route/viewport/theme/scroll combinations; reduced motion, idle frames, project links, no-JS, no errors.`);
 })().catch(e => {console.error(e);process.exitCode=1;}).finally(async () => { if (browser) await browser.close(); server.close(); });
