@@ -2477,11 +2477,6 @@ html { scroll-behavior: auto; }
 }
 
 .project-index-intro { max-width: 52rem; }
-.project-index-lede {
-  max-width: 44rem;
-  color: var(--copy);
-  line-height: 1.75;
-}
 .project-tier-heading {
   display: flex;
   justify-content: space-between;
