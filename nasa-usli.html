@@ -7,6 +7,20 @@
   <meta name="theme-color" content="#ffffff">
   <title>NASA University Student Launch | Jay Suthar</title>
   <meta name="description" content="NASA University Student Launch payload integration case study covering mechanical and electronics integration through the competition design cycle.">
+  <link rel="canonical" href="https://jaysuthar0721.github.io/portfolio/nasa-usli.html">
+  <link rel="icon" href="images/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Jay Suthar">
+  <meta property="og:title" content="NASA University Student Launch | Jay Suthar">
+  <meta property="og:description" content="NASA University Student Launch payload integration case study covering mechanical and electronics integration through the competition design cycle.">
+  <meta property="og:url" content="https://jaysuthar0721.github.io/portfolio/nasa-usli.html">
+  <meta property="og:image" content="https://jaysuthar0721.github.io/portfolio/images/og-share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Jay Suthar, Mechanical Engineering Portfolio">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
@@ -32,7 +46,7 @@
     <a class="case-study-back" href="projects.html">← All projects</a>
     <article class="project-detail" data-project-slug="nasa-usli-2024-2025">
       <header class="project-detail-header">
-        <h2 class="project-title" id="project-dialog-title">NASA University Student Launch</h2>
+        <h1 class="project-title">NASA University Student Launch</h1>
         <p class="project-detail-lede">As Payload Bay Specialist for CSU’s 2024–25 NASA University Student Launch team, I worked at the interface between mechanical design and embedded electronics. My role centered on developing the payload-bay architecture, packaging its avionics, and ensuring the subsystem could be integrated into the larger launch vehicle.</p>
         <p class="drone-credit"><strong>My focus:</strong> Payload bay design, CAD, electronics schematics in KiCad and Fusion 360 Electronics, sensor testing and soldering, electronics packaging, system analysis, and design-review documentation.</p>
       </header>
@@ -46,10 +60,10 @@
         <div><dt>Transmission</dt><dd>144.39 MHz, 2,500 ft target range</dd></div>
         <div><dt>Schematic tools</dt><dd>KiCad, Fusion 360 Electronics</dd></div>
       </dl>
-        <div class="project-block"><h3 class="project-block-label">Mission</h3><div class="drone-copy">
+        <div class="project-block"><h2 class="project-block-label">Mission</h2><div class="drone-copy">
           <p>The 2024–25 challenge was to design, build, and fly a reusable launch vehicle carrying a payload that collects, stores, and transmits data sets to a NASA-owned receiver. CSU’s design used a non-deployable payload in the forward section that recorded four data sets: apogee, landing-site temperature, time of landing, and maximum velocity.</p>
         </div></div>
-        <div class="project-block"><h3 class="project-block-label">Payload / Data collection</h3><div class="drone-copy">
+        <div class="project-block"><h2 class="project-block-label">Payload / Data collection</h2><div class="drone-copy">
           <p>I designed and analyzed the payload bay assembly in SolidWorks and drew the payload electronics schematics in KiCad and Fusion 360 Electronics. The system integrated a Teensy 4.1 with a BNO055 inertial measurement unit, BMP384 pressure sensor, and PCF8523 real-time clock, requiring the mechanical layout and electronics to be developed together within the available payload volume.</p>
         <figure class="drone-figure">
           <a href="images/nasa-usli/payload-data-collection.png" target="_blank" rel="noopener"><img src="images/nasa-usli/payload-data-collection.png" alt="Payload assembly diagram with labeled BMP384, BNO055, PCF8523, Teensy 4.1, and rotary switch" width="1144" height="678" loading="lazy" decoding="async"></a>
@@ -61,7 +75,7 @@
             <figcaption>Payload mechanical assembly that the electronics had to fit inside.</figcaption>
         </figure>
         </div></div>
-        <div class="project-block"><h3 class="project-block-label">Sensor testing &amp; soldering</h3><div class="drone-copy">
+        <div class="project-block"><h2 class="project-block-label">Sensor testing &amp; soldering</h2><div class="drone-copy">
           <p>The schematics were the reference for wiring a breadboard prototype and, later, for soldering the flight hardware. Before anything was soldered, I helped test the sensors on the breadboard to confirm each one communicated with the Teensy and returned sensible readings. Raw IMU acceleration was logged and compared against a filtered signal to check how much noise the velocity calculation would have to deal with. Once the sensors were validated, I helped solder them for integration into the payload.</p>
         <figure class="drone-figure">
           <a href="images/nasa-usli/sensor-breadboard.webp" target="_blank" rel="noopener"><img src="images/nasa-usli/sensor-breadboard.webp" alt="Breadboard prototype wiring a Teensy 4.1 to the real-time clock, IMU, and pressure sensor breakout boards" width="780" height="320" loading="lazy" decoding="async"></a>
@@ -72,18 +86,18 @@
             <figcaption>Raw versus filtered IMU acceleration from bench testing.</figcaption>
         </figure>
         </div></div>
-        <div class="project-block"><h3 class="project-block-label">Transmission system</h3><div class="drone-copy">
+        <div class="project-block"><h2 class="project-block-label">Transmission system</h2><div class="drone-copy">
           <p>After landing, the payload had to transmit its data at 144.39 MHz to a receiver 2,500 ft away while staying under 5 W. The chain ran from the battery through relays and a buck converter to an SX1276 transceiver, a VeGA Barebones amplifier, and an LCANOM1151 antenna, packaged in the payload sled alongside the data collection electronics.</p>
         <figure class="drone-figure">
           <a href="images/nasa-usli/transmission-layout.webp" target="_blank" rel="noopener"><img src="images/nasa-usli/transmission-layout.webp" alt="Payload sled rendering with labeled SX1276 transceiver, VeGA Barebones amplifier, STEMnaut capsule, and LCANOM1151 antenna" width="864" height="382" loading="lazy" decoding="async"></a>
             <figcaption>Transmission components inside the payload.</figcaption>
         </figure>
         </div></div>
-        <div class="project-block"><h3 class="project-block-label">Integration &amp; design reviews</h3><div class="drone-copy">
+        <div class="project-block"><h2 class="project-block-label">Integration &amp; design reviews</h2><div class="drone-copy">
           <p>Beyond component packaging, I worked on subsystem-level integration and analysis leading into the Preliminary Design Review. This included evaluating the payload architecture, identifying integration constraints, and refining the avionics layout so the mechanical and electrical systems could function as a single flight-ready assembly.</p>
           <p>The project gave me experience working within a formal aerospace design cycle rather than treating the payload as an isolated component. Design decisions had to account for interfaces with the airframe, avionics, competition requirements, and the work of other subsystem teams.</p>
         </div></div>
-        <div class="project-block"><h3 class="project-block-label">Competition &amp; experience</h3><div class="drone-copy">
+        <div class="project-block"><h2 class="project-block-label">Competition &amp; experience</h2><div class="drone-copy">
           <p>CSU finished <strong>7th overall out of 68 teams</strong> in the NASA University Student Launch competition. The project became one of my first experiences taking ownership of a rocket subsystem from CAD and electronics integration through formal design reviews and vehicle-level integration.</p>
         </div></div>
       </article>

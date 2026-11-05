@@ -30,7 +30,9 @@
   --content-width: 1280px;
   --content-padding: clamp(1.25rem, 5vw, 5rem);
 }
-* , *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 7rem; }
 body { background: var(--bg); color: var(--text); font: 500 1rem/1.7 var(--font-body); -webkit-font-smoothing: antialiased; min-height: 100vh; }
 img { display: block; max-width: 100%; }
@@ -38,7 +40,9 @@ a { color: inherit; text-decoration: none; touch-action: manipulation; }
 a:focus-visible { outline: 2px solid var(--accent-green); outline-offset: 5px; }
 ::selection { background: var(--accent-green); color: #fff; }
 p { text-wrap: pretty; }
-h1, h2, h3 { text-wrap: balance; }
+h1,
+h2,
+h3 { text-wrap: balance; }
 .skip-link { position: fixed; left: -9999px; top: 1rem; z-index: 200; padding: .75rem 1rem; background: var(--text); color: #fff; }
 .skip-link:focus { left: 1rem; }
 .nav { position: sticky; top: 0; z-index: 100; background: var(--surface); padding: max(.8rem, env(safe-area-inset-top)) max(var(--content-padding), env(safe-area-inset-right)) .8rem max(var(--content-padding), env(safe-area-inset-left)); border-bottom: 1px solid var(--rule); }
@@ -105,20 +109,24 @@ main.home { max-width: calc(var(--content-width) + 2 * var(--content-padding)); 
   .hero-split { gap: 2rem; }
   .hero-split-panel { min-height: 0; }
   .hero-name { font-size: clamp(2.7rem, 6vw, 4rem); }
-  .section, .project-block { grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: 1.5rem; }
+  .section,
+.project-block { grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: 1.5rem; }
 }
 @media (max-width: 700px) {
-  main, main.home { padding-top: 2.5rem; padding-bottom: 3rem; }
+  main,
+main.home { padding-top: 2.5rem; padding-bottom: 3rem; }
   .nav-links { gap: 1rem; }
   .nav-brand { font-size: .75rem; }
   .nav-links a { font-size: .65rem; }
   .hero-split { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
-  .hero-split-content, .hero-split-panel { grid-column: 1; grid-row: auto; }
+  .hero-split-content,
+.hero-split-panel { grid-column: 1; grid-row: auto; }
   .hero-split-content { order: 0; }
   .hero-split-panel { order: 1; min-height: 0; max-width: 480px; width: 100%; }
   .hero-name { font-size: clamp(2.6rem, 11vw, 4.5rem); }
   .hero-intro { font-size: .95rem; }
-  .section, .project-block { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+  .section,
+.project-block { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
   .section > * { grid-column: 1; grid-row: auto; }
   .section { margin-bottom: 3rem; }
   .title-block { margin-bottom: 2.5rem; }
@@ -127,12 +135,15 @@ main.home { max-width: calc(var(--content-width) + 2 * var(--content-padding)); 
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { transition: none !important; animation: none !important; }
+  *,
+*::before,
+*::after { transition: none !important; animation: none !important; }
 }
 
 /* Report-backed drone case study */
 .drone-lede { max-width: 48rem; font-size: 1.15rem; line-height: 1.7; }
-.drone-credit, .drone-source { color: var(--text-muted); font-size: .8rem; line-height: 1.8; }
+.drone-credit,
+.drone-source { color: var(--text-muted); font-size: .8rem; line-height: 1.8; }
 .drone-figure { margin: .5rem 0; min-width: 0; }
 .drone-figure a { display: block; background: var(--surface-muted); border: 1px solid var(--rule); padding: .75rem; }
 .drone-figure img { width: 100%; height: auto; max-height: 520px; object-fit: contain; }
@@ -155,10 +166,12 @@ main.home { max-width: calc(var(--content-width) + 2 * var(--content-padding)); 
 
 /* Aerospace motion: restrained orbital geometry and trajectory accents. */
 body { isolation: isolate; }
-main, .footer { position: relative; z-index: 1; }
+main,
+.footer { position: relative; z-index: 1; }
 
 .btn span { transition: transform .24s cubic-bezier(.2,.7,.2,1); }
-.btn:hover span, .btn:focus-visible span { transform: translate(2px, -1px); }
+.btn:hover span,
+.btn:focus-visible span { transform: translate(2px, -1px); }
 .nav-links a { position: relative; }
 .nav-links a::after {
   content: '';
@@ -172,13 +185,15 @@ main, .footer { position: relative; z-index: 1; }
   transform: translateX(-4px);
   transition: transform .24s cubic-bezier(.2,.7,.2,1), opacity .2s ease;
 }
-.nav-links a:hover::after, .nav-links a:focus-visible::after {
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
   opacity: .8;
   transform: translateX(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btn:hover span, .btn:focus-visible span { transform: none; }
+  .btn:hover span,
+.btn:focus-visible span { transform: none; }
 }
 
 /* Ram Rocketry / IREC leadership case study */
@@ -424,7 +439,7 @@ main, .footer { position: relative; z-index: 1; }
 .lesson-grid { grid-template-columns: minmax(0, 1fr); }
   .irec-metrics { grid-template-columns: minmax(0, 1fr); }
   .irec-metrics article,
-  .irec-metrics article:nth-child(2) {
+.irec-metrics article:nth-child(2) {
     border-right: 0;
     border-bottom: 1px solid var(--rule);
   }
@@ -630,9 +645,9 @@ main, .footer { position: relative; z-index: 1; }
   .project-flightpath path,
 .project-thumb-scan { animation: none !important; }
   .project-card,
-  .project-thumb img,
-  .project-thumb svg,
-  .project-card-open b { transition: none !important; transform: none !important; }
+.project-thumb img,
+.project-thumb svg,
+.project-card-open b { transition: none !important; transform: none !important; }
 }
 
 
@@ -803,7 +818,7 @@ body,
 }
 @media (prefers-reduced-motion: reduce) {
   .theme-toggle-orbit,
-  .theme-toggle-body::after { transition: none; }
+.theme-toggle-body::after { transition: none; }
 }
 
 
@@ -978,7 +993,6 @@ body,
 
 /* Project detail modals inherit a matching case-study color. */
 .project-detail { --detail-accent: var(--accent-blue); }
-.project-detail[data-project-slug="composite-wing-skin"] { --detail-accent: var(--accent-coral); }
 .project-detail[data-project-slug="manufacturing-clock"] { --detail-accent: var(--accent-gold); }
 .project-detail[data-project-slug="manufacturing-screwdriver"] { --detail-accent: var(--accent-coral); }
 .project-detail[data-project-slug="manufacturing-coaster"] { --detail-accent: var(--accent-blue); }
@@ -1049,7 +1063,7 @@ body,
 
 @media (prefers-reduced-motion: reduce) {
   .project-card:hover,
-  .project-card:focus-visible { transform: none; }
+.project-card:focus-visible { transform: none; }
 }
 
 
@@ -1223,19 +1237,10 @@ body,
 }
 
 /* Keep each project's established accent independent of grid position. */
-.project-card[data-project="active-fin-stabilization-rocket"],
-.project-card[data-project="composite-wing-skin"] { --card-accent: var(--accent-coral); }
-.project-card[data-project="injection-molded-screwdriver"] { --card-accent: var(--accent-violet); }
-.project-card[data-project="manufacturing-clock"] { --card-accent: var(--accent-gold); }
-.project-card[data-project="manufacturing-screwdriver"] { --card-accent: var(--accent-coral); }
-.project-card[data-project="manufacturing-coaster"] { --card-accent: var(--accent-blue); }
 .project-detail[data-project-slug="active-fin-stabilization-rocket"] { --detail-accent: var(--accent-coral); }
 .project-card-description { margin-top: .75rem; color: var(--copy); font-size: .85rem; line-height: 1.65; }
-.project-card[data-project="active-fin-stabilization-rocket"] .project-thumb img { object-fit: contain; }
 .project-detail[data-project-slug="active-fin-stabilization-rocket"] .project-detail-hero img { max-height: 680px; }
-.project-card[data-project="nasa-usli-2024-2025"] { --card-accent: var(--accent-cyan); }
 .project-detail[data-project-slug="nasa-usli-2024-2025"] { --detail-accent: var(--accent-cyan); }
-.project-card[data-project="nasa-usli-2024-2025"] .project-thumb img { object-fit: contain; }
 .leadership-l1-flow {
   max-width: 58rem;
   display: flow-root;
@@ -1273,8 +1278,10 @@ body,
 /* Simplified headings and section layout. */
 .hero-split-content::before { display: none; }
 .nav-brand::after { display: none; }
-.section, .leadership-section { grid-template-columns: minmax(0, 1fr); }
-.section > *, .leadership-section-body { grid-column: 1; }
+.section,
+.leadership-section { grid-template-columns: minmax(0, 1fr); }
+.section > *,
+.leadership-section-body { grid-column: 1; }
 .footer-copy { text-transform: none; }
 
 
@@ -1302,7 +1309,9 @@ body,
 /* Static baseline: legacy motion removed pending redesign. */
 html { scroll-behavior: auto; }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   animation: none !important;
   transition: none !important;
 }
@@ -1410,7 +1419,7 @@ html { scroll-behavior: auto; }
 
 .section-kicker,
 .flagship-meta,
-.project-tier-heading > span {
+.project-tier-heading > h2 {
   color: var(--accent-cyan);
   font-size: .65rem;
   font-weight: 700;
@@ -1627,7 +1636,7 @@ html { scroll-behavior: auto; }
 
   .hero-proof { grid-template-columns: 1fr; }
   .hero-proof > div,
-  .hero-proof > div + div {
+.hero-proof > div + div {
     padding: .7rem 0;
     border-left: 0;
     border-top: 1px solid var(--rule);
@@ -1651,5 +1660,5 @@ html { scroll-behavior: auto; }
 
 @media (prefers-reduced-motion: reduce) {
   .project-thumb img,
-  .project-thumb svg { transition: none !important; }
+.project-thumb svg { transition: none !important; }
 }
