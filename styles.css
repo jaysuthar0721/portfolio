@@ -1679,3 +1679,7 @@ html { scroll-behavior: auto; }
 :root[data-theme="dark"] .leadership-hero-figure figcaption { color: #000; }
 /* Links inside running text must be recognizable without relying on color. */
 main p a { text-decoration: underline; text-underline-offset: .18em; }
+
+/* Linked source documents */
+.leadership-documents { margin-top: 2.5rem; }
+.leadership-documents p { margin: .35rem 0 0; }
