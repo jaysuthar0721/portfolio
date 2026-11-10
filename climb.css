@@ -19,7 +19,9 @@ html.has-climb .nav { padding-bottom: calc(.8rem + 1.25rem); }
   color: var(--accent-green);
   background: var(--surface-soft);
 }
-.climb svg, .climb-veil { position: absolute; inset: 0; width: 100%; height: 100%; }
+.climb svg, .climb-veil, .climb-flare { position: absolute; inset: 0; width: 100%; height: 100%; }
+.climb-flare { display: block; opacity: .9; }
+:root[data-theme="dark"] .climb-flare { opacity: 1; mix-blend-mode: screen; }
 :root[data-theme="dark"] .climb { background: var(--bg); }
 .climb svg { fill: none; stroke: currentColor; stroke-width: 1; }
 .climb svg * { vector-effect: non-scaling-stroke; }
