@@ -22,6 +22,7 @@ The scroll-driven climb-to-orbit layer is the signature motion system.
 
 - An orbital diagram stays visible through the full scroll, with the satellite position following scroll progress.
 - Motion is driven by scroll and uses transform or opacity where practical.
+- A grainy sunrise flare on the orbital diagram's planet limb reacts to the mouse: the sun drifts toward the cursor and lens ghosts trail along the sun-to-cursor axis. It never animates while idle.
 - Reduced-motion preferences are respected.
 - The mobile header does not reserve space for the altitude readout.
 - Legacy ambient orbit rotors, project scan lines, telemetry pulses, and card-tilt motion are not part of the active visual language.

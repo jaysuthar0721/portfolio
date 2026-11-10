@@ -23,6 +23,13 @@ manufacturing redirect pages intentionally remain redirects.
   updates, and hides the readout. This preference can
   change while the page is open. Print and forced-colors hide the decoration.
 - If JavaScript is unavailable, the original static portfolio remains visible.
+- A canvas horizon flare (`.climb-flare`) sits on the planet's limb: a grainy
+  sun glow, starburst rays, and a bright atmosphere rim. On mouse or pen
+  movement the sun drifts toward the pointer, the rays rotate, and lens ghosts
+  appear along the sun-to-pointer axis. Frames run only while the pointer moves
+  and the easing settles; touch input and reduced motion leave it static. The
+  sprites are pre-rendered on resize and theme change, and the grain uses a
+  seeded noise tile so the flare looks the same on every visit.
 
 ## Browser verification
 
